@@ -1,3 +1,3 @@
-felayout_ricky
+<%= projectName %>
 
 ## DOCUMENTATION:
