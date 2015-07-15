@@ -1,10 +1,11 @@
 
 newrelease:
     - 'prompt:isMaster'
-    #=======
-    - 'gitignore'
-    #=======
+    #=======felayout
+    - 'felayoutGitignore'
     - 'felayout'
+    #=======big
+    - 'bigGitignore'
     #=======
     - 'shell:gitAdd'
     - 'prompt:shell'
@@ -17,10 +18,12 @@ newrelease:
     - 'shell:release'
 
     - 'prompt:ask'
-    #=======
+
+    #=======felayout
     - 'felayoutReverse'
-    #=======
-    - 'gitignoreReverse'
+    - 'felayoutGitignoreReverse'
+    #=======big
+    - 'bigGitignoreReverse'
     #=======
     # - 'shell:gitAdd'
     - 'shell:gitCommit'
