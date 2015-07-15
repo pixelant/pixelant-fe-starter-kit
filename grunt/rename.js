@@ -4,8 +4,8 @@ module.exports = {
         dest: 'app/templates/**/gitignore'
     },
     allGitignoreReverse: {
-        src: '<%= felayout %>/gitignore',
-        dest: '<%= felayout %>/.gitignore'
+        src: 'app/templates/**/gitignore',
+        dest: 'app/templates/**/.gitignore'
     }
     // felayoutGitignore: {
     //     src: '<%= felayout %>/.gitignore',

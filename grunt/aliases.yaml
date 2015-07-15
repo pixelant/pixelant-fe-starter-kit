@@ -2,7 +2,7 @@
 newrelease:
     - 'prompt:isMaster'
     #=======
-    # - 'gitignore'
+    - 'gitignore'
     #=======
     - 'felayout'
     #=======
@@ -20,7 +20,7 @@ newrelease:
     #=======
     - 'felayoutReverse'
     #=======
-    # - 'gitignoreReverse'
+    - 'gitignoreReverse'
     #=======
     # - 'shell:gitAdd'
     - 'shell:gitCommit'
@@ -43,8 +43,8 @@ npmlink:
     #=======
     - 'felayoutReverse'
 
-reverse:
-    - 'felayoutReverse'
+# reverse:
+    # - 'felayoutReverse'
     # - 'gitignoreReverse'
 
 
@@ -53,9 +53,11 @@ reverse:
 
 # gitignore
 gitignore:
-    - 'rename:gitignore'
+    # - 'rename:gitignore'
+    - 'rename:allGitignore'
 gitignoreReverse:
-    - 'rename:gitignoreReverse'
+    # - 'rename:gitignoreReverse'
+    - 'rename:allGitignoreReverse'
 
 
 # felayout
@@ -68,7 +70,7 @@ felayoutReverse:
 
 
 # big
-big:
-    - 'replace:felayoutName'
-bigReverse:
-    - 'replace:felayoutNameReverse'
+# big:
+#     - 'replace:felayoutName'
+# bigReverse:
+#     - 'replace:felayoutNameReverse'

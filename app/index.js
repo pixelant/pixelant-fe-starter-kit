@@ -29,10 +29,9 @@ module.exports = generators.Base.extend({
                     type: 'list',
                     name: 'projectType',
                     message: 'Project type:',
-                    // choices: ['Big project', gray('Small project'), gray('Medium project'), gray('Complex project'), gray('FE workflow (Static site)'), gray('Extended FE workflow (experimental)'), 'felayout_ricky'],
                     choices: [
                         {
-                            name: 'Big project',
+                            name: gray('Big project'),
                             value: 'big'
                         },
                         {
@@ -66,7 +65,7 @@ module.exports = generators.Base.extend({
             ];
             var promptRecursive = function() {
                 that.prompt(prompts, function(answers) {
-                    if (answers.projectType === 'medium' || answers.projectType === 'complex' || answers.projectType === 'site' || answers.projectType === 'fe') {
+                    if (answers.projectType === 'big' || answers.projectType === 'medium' || answers.projectType === 'complex' || answers.projectType === 'site' || answers.projectType === 'fe') {
                         that.log(answers.projectType + warning(' under construction. Choose another type.'));
                         promptRecursive();
                     } else {
@@ -137,7 +136,7 @@ module.exports = generators.Base.extend({
             var sshLink = {
                 type: 'input',
                 name: 'sshLink',
-                message: 'SSH link of your new repository on Bitbucket',
+                message: 'SSH link of your new repository on Bitbucket\n' + inverse('skip') + ' to skip this step',
                 validate: function(answer) {
                     if (answer.length > 31 && answer.slice(0, 27) === 'git@bitbucket.org:pixelant/' && answer.slice(-4) === '.git' || answer === 'skip') {
                         return true;
@@ -154,46 +153,6 @@ module.exports = generators.Base.extend({
                 prompts.push(repo);
                 prompts.push(hook);
                 prompts.push(sshLink);
-                // var felayoutPrompts = [
-                //     {
-                //         type: 'input',
-                //         name: 'repo',
-                //         message: 'Need to create new repository on Bitbucket',
-                //         default: 'Done',
-                //         validate: function(answer) {
-                //             if (answer === 'y' || answer === 'Y' || answer === 'yes' || answer === 'Yes' || answer === 'Done' || answer === 'done') {
-                //                 return true;
-                //             }
-                //             return warning('You must create repo before continuing');
-                //         }
-                //     },
-                //     {
-                //         type: 'input',
-                //         name: 'hook',
-                //         message: 'Need to add ' + yellow('POST Hook') + ' to your project on Bitbucket\n' + blue('http://54.216.37.235/bitbucketpost.php'),
-                //         default: 'Done',
-                //         validate: function(answer) {
-                //             if (answer === 'y' || answer === 'Y' || answer === 'yes' || answer === 'Yes' || answer === 'Done' || answer === 'done') {
-                //                 return true;
-                //             }
-                //             return warning('You must add POST Hook before continuing');
-                //         }
-                //     },
-                //     {
-                //         type: 'input',
-                //         name: 'sshLink',
-                //         message: 'SSH link of your new repository on Bitbucket',
-                //         validate: function(answer) {
-                //             if (answer.length > 31 && answer.slice(0, 27) === 'git@bitbucket.org:pixelant/' && answer.slice(-4) === '.git' || answer === 'skip') {
-                //                 return true;
-                //             }
-                //             return warning('Wrong repository link, try again...');
-                //         }
-                //     }
-                // ];
-                // felayoutPrompts.map(function(obj) {
-                //     return prompts.push(obj);
-                // });
                 prompts.push(git);
                 prompts.push(confirm);
             }
@@ -277,7 +236,7 @@ module.exports = generators.Base.extend({
                 this.spawnCommand('git', ['init', '-q']).on('close', function() {
                     that.spawnCommand('git', ['add', '--all']).on('close', function() {
                         that.spawnCommand('git', ['commit', '-m', '"[INITIAL COMMIT]"', '-q']).on('close', function() {
-                            that.spawnCommand('git', ['remote', 'add', 'origin', 'repo link']).on('close', function() {
+                            that.spawnCommand('git', ['remote', 'add', 'origin', that.sshLink]).on('close', function() {
                                 that.spawnCommand('git', ['push', '-u', '-q', 'origin', 'master']);
                             });
                         });
@@ -293,7 +252,7 @@ module.exports = generators.Base.extend({
                     inverse('git init\n' +
                         'git add .\n' +
                         'git commit -m \'[INITIAL COMMIT]\'\n' +
-                        'git remote add origin' + this.sshLink + '\n' +
+                        'git remote add origin <<repo-link>>' + '\n' +
                         'git push -u origin master\n'
                         )
                     );
