@@ -1,0 +1,74 @@
+
+newrelease:
+    - 'prompt:isMaster'
+    #=======
+    # - 'gitignore'
+    #=======
+    - 'felayout'
+    #=======
+    - 'shell:gitAdd'
+    - 'prompt:shell'
+    - 'jshint'
+    - 'jscs'
+    - 'changelog:test'
+    - 'shell:dryRelease'
+    - 'prompt:ask'
+    - 'changelog:go'
+    - 'shell:release'
+
+    - 'prompt:ask'
+    #=======
+    - 'felayoutReverse'
+    #=======
+    # - 'gitignoreReverse'
+    #=======
+    # - 'shell:gitAdd'
+    - 'shell:gitCommit'
+    - 'shell:gitPush'
+
+
+checkjs:
+    - 'jshint'
+    - 'jscs'
+
+drylog:
+    - 'changelog:test'
+
+
+
+npmlink:
+    - 'felayout'
+    #=======
+    - 'prompt:ask'
+    #=======
+    - 'felayoutReverse'
+
+reverse:
+    - 'felayoutReverse'
+    # - 'gitignoreReverse'
+
+
+
+
+
+# gitignore
+gitignore:
+    - 'rename:gitignore'
+gitignoreReverse:
+    - 'rename:gitignoreReverse'
+
+
+# felayout
+felayout:
+    - 'replace:felayoutName'
+    - 'replace:felayoutLink'
+felayoutReverse:
+    - 'replace:felayoutNameReverse'
+    - 'replace:felayoutLinkReverse'
+
+
+# big
+big:
+    - 'replace:felayoutName'
+bigReverse:
+    - 'replace:felayoutNameReverse'

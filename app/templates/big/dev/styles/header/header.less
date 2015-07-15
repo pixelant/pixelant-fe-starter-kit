@@ -1,0 +1,142 @@
+// =================================
+// === Header Top ==================
+// =================================
+.header-top{
+    position: fixed;
+    z-index: 1100;
+    box-shadow:  0 2px 2px -1px rgba(0, 0, 0, 0.1);
+    -webkit-backface-visibility: hidden;
+}
+.pxa-header {
+    position: relative;
+    padding-top: 49px;
+}
+
+@media (min-width: 992px) {
+    .header-top{
+        position: relative;
+        box-shadow: none;
+    }
+    .pxa-header {
+        padding-top: 0;
+    }
+
+}
+
+// .header-top{
+//     position: relative;
+//     z-index: 1;
+//     box-shadow: none;
+// }
+// .pxa-header {
+//     position: relative;
+//     padding-top: 0;
+// }
+// -------------
+
+
+
+
+.header-top{
+
+    background-color: #fff;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header-top {
+    border-bottom: 1px solid #e4e4e4;
+    height: 50px;
+}
+
+
+
+
+// =================================
+// === Header Top Meta menu ========
+// =================================
+.header-meta-menu .nav > li > a:hover, .header-top .nav > li > a:focus {
+    // border-bottom: 3px solid @t3-main-color;
+    background: #f0f0f0;
+}
+.header-meta-menu .nav > li > a {
+padding: 15px 10px 14px 8px;
+// border-bottom: 3px solid #fff;
+color: #333;
+border-radius: 0;
+}
+.header-meta-menu .nav > li {
+    float: left;
+}
+.header-meta-menu .nav {
+    float: right;
+}
+
+.header-meta-menu .nav li > a:before {
+    .icons();
+    padding-right: 5px;
+}
+
+
+.header-meta-menu .nav li:nth-child(1) > a:before {
+    content: "\53";
+}
+.header-meta-menu .nav li:nth-child(2) > a:before {
+    content: "\eb";;
+}
+.header-meta-menu .nav li:nth-child(3) > a:before {
+    content: "\3f";
+}
+
+@media (max-width: 768px) {
+    .header-meta-menu .nav {
+        display: none;
+    }
+}
+// .header-meta-menu .nav > li > a:active {
+//     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 -1px 0 #FFF;
+//     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+//     background: #f0f0f0;
+//     color: #999;
+//     text-decoration: none;
+// }
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+
+
+// =================================
+// === Header Middle ===============
+// =================================
+.header-middle {
+    height: 130px;
+    margin-bottom: 10px;
+}
+@media (min-width: 992px) {
+    .header-middle {
+        margin-bottom: 0;
+    }
+}
+.header-middle .social{
+    float: none;
+    padding-right: 0;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.header-middle .social ul{
+    display: inline-block;
+}
+
+@media (min-width: 768px) {
+    .header-middle .social{
+        padding-top: 50px;
+        padding-right: 8px;
+        float: right;
+    }
+}
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------

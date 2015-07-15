@@ -1,0 +1,111 @@
+default:
+    - 'clean:tmp'
+    - 'concurrent:tmp'
+    - 'autoprefixer'
+    - 'connect:tmp'
+    - 'watch'
+
+jstyle:
+    - 'jshint:js'
+    - 'jscs:js'
+
+style:
+    - 'jshint:grunt'
+    - 'jscs:grunt'
+
+check:
+    - 'clean:tmp'
+    - 'concurrent:tmp'
+    - 'autoprefixer'
+    - 'jstyle'
+    - 'style'
+    - 'csslint'
+    - 'htmlhint'
+    - 'validation'
+
+pushSite:
+    - 'buildcontrol:site'
+pushSmall:
+    - 'buildcontrol:small'
+pushBig:
+    - 'buildcontrol:big'
+
+site:
+    #Defaul
+    - 'clean:tmp'
+    - 'concurrent:tmp'
+    - 'autoprefixer'
+    #Check code
+    - 'jstyle'
+    - 'style'
+    - 'csslint'
+    - 'htmlhint'
+    #Site
+    - 'clean:site'
+    - 'concat:toMainCss'
+    - 'concurrent:min'
+    - 'concurrent:site'
+    - 'htmlmin'
+    #---------------
+    # - 'connect:site'
+    #---or----------
+    - 'pushSite'
+    #---------------
+
+big:
+    #Defaul
+    - 'clean:tmp'
+    - 'concurrent:tmp'
+    - 'autoprefixer'
+    #Check code
+    - 'jstyle'
+    - 'style'
+    - 'csslint'
+    - 'htmlhint'
+    #Big
+    - 'clean:big'
+    - 'concat:toMainCss'
+    - 'concurrent:min'
+    - 'concurrent:big'
+    - 'rename:big'
+    #---------------
+    - 'pushBig'
+    #---------------
+
+
+small:
+    #Defaul
+    - 'clean:tmp'
+    - 'concurrent:tmp'
+    - 'autoprefixer'
+    #Check code
+    - 'jstyle'
+    - 'style'
+    - 'csslint'
+    - 'htmlhint'
+    #Small
+    - 'clean:small'
+    - 'concurrent:small'
+    - 'rename:small'
+    #---------------
+    - 'pushSmall'
+    #---------------
+
+
+base:
+    #Defaul
+    - 'clean:tmp'
+    - 'concurrent:tmp'
+    - 'autoprefixer'
+    #Check code
+    - 'jstyle'
+    - 'style'
+    - 'csslint'
+    - 'htmlhint'
+    #Site
+    - 'clean:base'
+    - 'cssmin:components'
+    - 'concurrent:min'
+    - 'copy:baseJs'
+    - 'copy:bootstrap'
+    #---------------

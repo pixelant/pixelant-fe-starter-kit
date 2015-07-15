@@ -1,0 +1,48 @@
+<div class="header-top ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 col-xs-2 pull-left">
+{{!--                 <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="toggle-button">☰</button>
+                        </div>
+                    </div>
+                </div> --}}
+                {{> mainNavToggleButton}}
+            </div>
+            <div class="col-md-11 col-xs-10 header-meta-menu">
+                {{ renderContent 'languageMenu'
+                    languageMenuType="dropdown"
+                    class=""
+                }}
+                {{!-- {{> searchToggleButton}} --}}
+                {{ renderContent 'searchForm'
+                    collapse="false"
+                    class=""
+                }}
+                <ul class="nav" >
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="siteMap.html"> Sitemap</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>LOGO</h1>
+        </div>
+        <div class="col-md-6">
+            {{>social}}
+        </div>
+    </div>
+</div>
+
+{{ renderContent 'nav'
+    class=""
+    toggleBtn="false"
+    searchForm="false"
+}}

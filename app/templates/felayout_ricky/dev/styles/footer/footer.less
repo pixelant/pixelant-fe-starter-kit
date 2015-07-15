@@ -1,0 +1,189 @@
+// =================================
+// === Footer ======================
+// =================================
+.pxa-footer{
+    background: @footer-bg-color;
+    border-top: 15px solid darken(@footer-color, 11%);
+    margin-top: 30px;
+    // padding-top: 20px;
+}
+.pxa-footer p{
+    color: @footer-color;
+    padding-bottom: 5px;
+}
+.pxa-footer h1, .pxa-footer h2, .pxa-footer h3, .pxa-footer h4, .pxa-footer h5, .pxa-footer h6{
+    color: @footer-color;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+}
+.pxa-footer h4{
+    border-bottom: 1px solid darken(@footer-color, 37%);
+}
+
+
+.pxa-footer .social .nav-pills  a {
+    color: @footer-color;
+}
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// =================================
+// === Footer About ===============
+// =================================
+.footer-about {
+    padding-top: 30px;
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// =================================
+// === Footer Contact ==============
+// =================================
+.footer-contact {
+    padding-top: 30px;
+}
+@media (min-width: 1200px) {
+    .footer-contact .contact-links a{
+        display: inline;
+    }
+}
+@media (min-width: 992px) {
+    .footer-contact .contact-links a{
+        display: block;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// =================================
+// === Footer Quick Links===========
+// =================================
+.footer-quick-links{
+    padding-top: 30px;
+}
+.footer-quick-links .nav > li > a{
+    transition: color .2s ease;
+    text-transform: uppercase;
+    color: @footer-color;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+.footer-quick-links .nav > li > a:hover, .footer-quick-links .nav > li > a:focus {
+    background-color: transparent;
+    color: @t3-main-color-hover;
+}
+.footer-quick-links .nav > li > a:before {
+    .icons();
+    content: "\101";
+    color: @t3-main-color;
+    font-size: 16px;
+    text-transform: none;
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// =================================
+// === Footer Map ==================
+// =================================
+.map{
+    margin-left: inherit;
+}
+
+@media (min-width: 768px) {
+    .map{
+        margin-left: -50px;
+    }
+}
+.map a{
+    font-size: 32px;
+    line-height: 1.5;
+    padding-left: 14px;
+    padding-top:6px;
+    color: @t3-main-color;
+    background: darken(@footer-color, 41%);
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.map a:hover{
+    text-decoration: none;
+    color: @t3-main-color-hover;
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// =================================
+// === Footer Bottom ===============
+// =================================
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+}
+.footer-bottom p{
+    color: darken(@footer-color, 28%);
+}
+.footer-bottom .row{
+    margin-right: 0;
+    margin-left: 0;
+}
+.footer-copyright{
+    padding-top: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 1px solid darken(@footer-color, 37%);
+}
+.footer-bottom-nav{
+    padding-top: 6px;
+    padding-right: 0;
+    padding-left: 0;
+}
+.footer-bottom-nav .nav{
+    display: inline-block;
+}
+.footer-bottom-nav .nav a{
+    color: darken(@footer-color, 28%);
+    text-transform: uppercase;
+    padding-top: 0;
+    transition: color .2s ease;
+}
+
+.footer-bottom-nav .nav  li{
+    float: left;
+}
+
+.footer-bottom-nav .nav  li > a:hover {
+    color: #999;
+    background-color: transparent;
+}
+
+@media (min-width: 992px) {
+    .footer-bottom {
+        text-align: left;
+    }
+    .footer-bottom-nav{
+        padding-top: 12px;
+        border-top: 1px solid darken(@footer-color, 37%);
+    }
+    .footer-bottom-nav .nav{
+        display: block;
+    }
+    .footer-bottom-nav .nav{
+        float: right;
+    }
+
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+

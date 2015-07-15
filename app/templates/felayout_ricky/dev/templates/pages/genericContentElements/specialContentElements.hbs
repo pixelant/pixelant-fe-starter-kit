@@ -1,0 +1,37 @@
+---
+layout: BlankTemplate.hbs #layouts, same as we have in TYPO3; dev/templates/layouts ...
+title: Special Content Elements #title in menu
+number: 31 #position in menu
+menuLevel: 2
+hideInMenu: false #if true, will be hidden in menu
+#shortcut: false #if true, will be hidden in breadcrumbs, same behavior we have in TYPO3
+#subpages: false #(only for first-level pages)
+parent: Generic #(only for second-level pages)
+#parent2: #(only for third-level pages)
+#parent3: #(only for fourth-level pages)
+#parent4: #(only for fifth-level pages)
+---
+
+{{> breadcrumb}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+{{#markdown }}
+##Special elements for building some unique elements on the page. For example: main menu, sub-menu, search form, breadcrumbs. Most of them created especially for header elements.
+* Main menu
+* Toggle button for main menu
+* Search form
+* Toggle button for search form
+* Language menu
+* Breadcrumbs
+* SubNavigation
+
+***
+***
+
+{{/markdown }}
+        </div>
+    </div>
+</div>
+
+

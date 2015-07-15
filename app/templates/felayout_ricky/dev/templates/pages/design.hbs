@@ -1,0 +1,152 @@
+---
+layout: Content100%.hbs #layouts, same as we have in TYPO3; dev/templates/layouts ...
+title: Design #title in menu
+number: 5 #position in menu
+menuLevel: 1
+hideInMenu: false #if true, will be hidden in menu
+shortcut: false #if true, will be hidden in breadcrumbs, same behavior we have in TYPO3
+subpages: false #(only for first-level pages)
+#parent: #(only for second-level pages)
+#parent2: #(only for third-level pages)
+#parent3: #(only for fourth-level pages)
+#parent4: #(only for fifth-level pages)
+---
+
+{{#markdown }}
+#Instructions for Designers
+
+***
+* [Design](#design)
+* [Responsive design](#responsive-design)
+* [PSD](#psd)
+* [Fonts](#fonts)
+* [Icons](#icons)
+* [Favicon](#favicon)
+* [Files](#files)
+* [Links](#links)
+* [Required Icons for Pixelant Core](#required-icons)
+***
+
+##Design
+* Please before starting new design, check this site [FElayout_ricky](http://felayout_ricky.testserver.pixelant.nu/). This site structure created special for understanding which templates and content element we have already implemented. It is like a puzzles. Always keep in mind all these content elements before start new design.
+
+##Responsive design
+* Large display view
+* Desktop view
+* Tablet view
+* Mobile viev
+* In Pixelant Core we use only two variants of design (`Mobile < 992px & Desktop > 992px`)
+>Note: Better to start design from mobile view. (`Mobile first`)
+
+##PSD
+* Use Bootstrap grid in PSD files
+* Use Notes and Layer compositions to include comments and mouse over stuff in PSD files
+* Blend mode in photoshop: only normal. Without: multiply, screen, overlay etc. And without opacity in gradients. In general opacity not very good.
+* Layer should be alone, without creating additional layers for special effect
+* Understandable layer structure.
+
+##Fonts
+* If we whant use unusual fonts, better to use Google Fonts. But always keep in mind not all fonts have good view on Windows especially in big sizes.
+* Not more two - three additional web fonts, and in general not more five fonts(with OS standart fonts)
+
+##Icons
+**Pixelant Core** use a lot of icons. Our choise is icon font (a font with icons as its glyphs). We use web-service [icomoon](http://icomoon.io/) to generate icon font with needed icons. We can use unique icons for every project, even for small project.
+
+####Workflow for Designers:
+- Open [icomoon.io](http://icomoon.io/), add needed icon libraries and select icons which we need for this project. Also always should remember about [required icons for Pixelant Core.](#required-icons)
+- Save and download selected icons (fonts and png). Use recomended settings. Only change font name to `icons`.
+- For design in Photoshop use `png` icons.
+- Prepare files for FE developers (archive from Icommon `icons.zip`)
+>Important: Select as few as possible icons from Icomoon. Only icons which we will use on our project.
+
+##Favicon
+- Prepare file icon.png (`260px/260px`).
+>Note: It should be simple icon, with possibility to scale and pretty good view in different sizes. [Read more about whole process with favicons.](https://bitbucket.org/pixelant/felayout_ricky/wiki/rootFiles)
+
+##Files
+- PSD files with design. (Several files, depend on how many responsive points we have)
+- Instructions for fonts.
+- icons.zip (icomoon.io)
+- icon.png (260px/260px) (favicon)
+- High Resolution logo with transparency (png, svg)
+- Additional images
+
+##Links
+
+- Animations:
+    - [Animate.css](http://daneden.github.io/animate.css/)
+    - [Hover](http://ianlunn.github.io/Hover/)
+    - [PageTransitions](http://tympanus.net/Development/PageTransitions/)
+    - [Effeckt](http://h5bp.github.io/Effeckt.css/#0)
+- Fonts:
+    - [Google Fonts](http://www.google.com/fonts/)
+    - [Typekit](https://typekit.com/)
+    - [Typetester](http://www.typetester.org/)
+    - [Somadesign](http://somadesign.ca/demos/better-google-fonts/)
+    - [Webfonts Ampersands](http://hail2u.github.io/google-webfonts-ampersands.html)
+    - [Cssfontstack](http://cssfontstack.com/)
+    - [Typecast](http://typecast.com/preview/google)
+    - [Brick](http://brick.im/)
+
+
+{{/markdown }}
+<h2 id="required-icons">Required Icons for Pixelant Core</h2>
+<span class="icons icon-t3-mobile" style="font-size:20px; display:block; margin-top:14px;">
+<code>&lt;span class="icons icon-t3-mobile"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-mail">
+<code>&lt;span class="icons icon-t3-mail"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-home">
+<code>&lt;span class="icons icon-t3-home"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-sitemap">
+<code>&lt;span class="icons icon-t3-sitemap"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-login">
+<code>&lt;span class="icons icon-t3-login"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-dropdown-arrow">
+<code>&lt;span class="icons icon-t3-dropdown-arrow"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-search">
+<code>&lt;span class="icons icon-t3-search"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-map">
+<code>&lt;span class="icons icon-t3-map"&gt;&lt;/span&gt;</code></span>
+<h3>Social icons</h3>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-facebook">
+<code>&lt;span class="icons icon-t3-facebook"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-twitter">
+<code>&lt;span class="icons icon-t3-twitter"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-linkedin">
+<code>&lt;span class="icons icon-t3-linkedin"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-vimeo">
+<code>&lt;span class="icons icon-t3-vimeo"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-googleplus">
+<code>&lt;span class="icons icon-t3-googleplus"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-pinterest">
+<code>&lt;span class="icons icon-t3-pinterest"&gt;&lt;/span&gt;</code></span>
+<h3>Carousel</h3>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-slider-arrow-left">
+<code>&lt;span class="icons icon-t3-slider-arrow-left"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-slider-arrow-right">
+<code>&lt;span class="icons icon-t3-slider-arrow-right"&gt;&lt;/span&gt;</code></span>
+<h3>Quote</h3>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-quoteMark">
+<code>&lt;span class="icons icon-t3-quoteMark"&gt;&lt;/span&gt;</code></span>
+<h3>Files</h3>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-file">
+<code>&lt;span class="icons icon-t3-file"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-film">
+<code>&lt;span class="icons icon-t3-film"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-picture">
+<code>&lt;span class="icons icon-t3-picture"&gt;&lt;/span&gt;</code></span>
+<h3>News</h3>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-newsCarousel-arrow-up">
+<code>&lt;span class="icons icon-t3-newsCarousel-arrow-up"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-newsCarousel-arrow-down">
+<code>&lt;span class="icons icon-t3-newsCarousel-arrow-down"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-news-categoryIcon">
+<code>&lt;span class="icons icon-t3-news-categoryIcon"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-news-archiveIcon">
+<code>&lt;span class="icons icon-t3-news-archiveIcon"&gt;&lt;/span&gt;</code></span>
+<h3>Search</h3>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-search-pagination-left">
+<code>&lt;span class="icons icon-t3-search-pagination-left"&gt;&lt;/span&gt;</code></span>
+<span style="font-size:20px; display:block; margin-top:14px;" class="icons icon-t3-search-pagination-right">
+<code>&lt;span class="icons icon-t3-search-pagination-right"&gt;&lt;/span&gt;</code></span>
+
