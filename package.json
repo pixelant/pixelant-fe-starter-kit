@@ -19,6 +19,9 @@
     "typo3",
     "grunt"
   ],
+  "scripts": {
+    "test": "grunt checkjs"
+  },
   "dependencies": {
     "chalk": "1.0.0",
     "semver": "4.3.6",
