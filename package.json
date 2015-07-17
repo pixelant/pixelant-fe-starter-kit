@@ -20,7 +20,7 @@
     "grunt"
   ],
   "scripts": {
-    "test": "grunt checkjs",
+    "checkjs": "grunt checkjs",
     "test": "mocha --timeout 5000"
   },
   "dependencies": {

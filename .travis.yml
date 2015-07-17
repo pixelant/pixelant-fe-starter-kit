@@ -1,5 +1,8 @@
 sudo: false
 language: node_js
+script:
+  - npm checkjs
+  - npm test
 node_js:
   - '0.12'
 before_install:

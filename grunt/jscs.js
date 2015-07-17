@@ -4,6 +4,6 @@ module.exports = {
         force: true
     },
     js: {
-        src: ['Gruntfile.js', 'grunt/*.js', 'app/index.js']
+        src: ['Gruntfile.js', 'grunt/*.js', 'app/index.js', 'test/*.js']
     }
 };
