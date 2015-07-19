@@ -1,8 +1,4 @@
-sudo: false
 language: node_js
-script:
-  - grunt checkjs
-  - mocha --timeout 5000
 node_js:
   - '0.12'
 before_install:
