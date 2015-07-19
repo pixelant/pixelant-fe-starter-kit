@@ -9,6 +9,3 @@ npm-debug.log
 *.sublime-*
 validation-status.json
 .idea
-test/*.*
-
-
