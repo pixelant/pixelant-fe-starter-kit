@@ -1,3 +1,3 @@
-big
+<%= projectName %>
 
 ## DOCUMENTATION:

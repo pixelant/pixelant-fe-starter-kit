@@ -1,5 +1,5 @@
 {
-  "name": "big",
+  "name": "<%= projectName %>",
   "version": "0.0.1",
   "description": "Pixelant Project",
   "license" : "MIT",

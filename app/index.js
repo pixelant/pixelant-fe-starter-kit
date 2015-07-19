@@ -227,8 +227,8 @@ module.exports = generators.Base.extend({
     // },
     install: {
         npmAndBower: function() {
-            // this.npmInstall();
-            // this.bowerInstall();
+            this.npmInstall();
+            this.bowerInstall();
         },
         gitInit: function() {
             var that = this;

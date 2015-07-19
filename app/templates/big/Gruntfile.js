@@ -8,7 +8,7 @@ module.exports = function(grunt) {
             dev: 'dev',
             temp: 'temp',
             bc: 'dev/bower_components/',
-            repo: 'ssh'
+            repo: '<%= sshLink %>'
         },
         jitGrunt: {
             staticMappings: {
