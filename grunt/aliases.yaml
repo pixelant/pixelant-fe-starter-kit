@@ -46,9 +46,9 @@ npmlink:
     - 'felayoutReverse'
     - 'gitignoreReverse'
 
-# reverse:
-    # - 'felayoutReverse'
-    # - 'gitignoreReverse'
+reverse:
+    - 'felayoutReverse'
+    - 'gitignoreReverse'
 
 
 

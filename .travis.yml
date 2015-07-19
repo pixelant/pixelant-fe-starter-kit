@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 script:
-  - npm checkjs
+  - grunt checkjs
   - npm test
 node_js:
   - '0.12'
