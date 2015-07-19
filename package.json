@@ -20,7 +20,7 @@
     "grunt"
   ],
   "scripts": {
-    "test": "mocha --timeout 5000"
+    "test": "mocha"
   },
   "dependencies": {
     "chalk": "1.0.0",
@@ -42,7 +42,6 @@
     "jshint-stylish": "2.0.0",
     "load-grunt-config": "0.17.1",
     "time-grunt": "1.2.1",
-    "mocha": "2.2.5",
-    "should": "7.0.2"
+    "mocha": "*"
   }
 }
