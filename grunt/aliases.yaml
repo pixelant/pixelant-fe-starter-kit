@@ -1,46 +1,22 @@
-
 newrelease:
     - 'prompt:isMaster'
-    #=======
-    #=======
-    # - 'shell:gitAdd'
-    - 'prompt:shell'
+    - 'prompt:varsion'
     - 'jshint'
     - 'jscs'
     - 'changelog:test'
-    - 'shell:dryRelease'
+    - 'shell:testRelease'
     - 'prompt:ask'
     - 'changelog:go'
     - 'shell:release'
-
-    - 'prompt:ask'
-
-    #=======
-    #=======
-    # - 'shell:gitAdd'
-    # - 'shell:gitCommit'
-    # - 'shell:gitPush'
 
 
 checkjs:
     - 'jshint'
     - 'jscs'
 
-drylog:
+
+testlog:
     - 'changelog:test'
-
-
-install:
-    - 'felayout'
-    - 'big'
-    #=======
-    - 'prompt:ask'
-    #=======
-    - 'felayoutReverse'
-    - 'bigReverse'
-
-
-
 
 
 # felayout
@@ -51,6 +27,12 @@ felayoutReverse:
     - 'replace:felayoutNameReverse'
     - 'replace:felayoutLinkReverse'
 
+install-felayout:
+    - 'felayout'
+    - 'shell:installFElayout'
+    - 'felayoutReverse'
+#=======
+
 
 # big
 big:
@@ -59,3 +41,17 @@ big:
 bigReverse:
     - 'replace:bigNameReverse'
     - 'replace:bigLinkReverse'
+install-big:
+    - 'big'
+    - 'shell:installBig'
+    - 'bigReverse'
+#=======
+
+
+reverse:
+    - 'bigReverse'
+    - 'felayoutReverse'
+
+install-all:
+    - 'install-felayout'
+    - 'install-big'

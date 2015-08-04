@@ -26,7 +26,7 @@ module.exports = {
 // Labels INFO
 
 // [FEATURE]: A new feature
-// [BUGFIX]: A bug fix
+// [BUGFIX]: A bug fix (bug fixes)
 // [DOC]: Documentation only changes
 // [STYLE]: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 // [TEST]: Adding missing tests

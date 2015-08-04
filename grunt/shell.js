@@ -1,9 +1,33 @@
 module.exports = {
+    installBig: {
+        options: {
+            stderr: false,
+            execOptions: {
+                cwd: 'app/templates/big'
+            }
+        },
+        command: [
+            'npm install',
+            'bower install',
+        ].join('&&')
+    },
+    installFElayout: {
+        options: {
+            stderr: false,
+            execOptions: {
+                cwd: 'app/templates/felayout_ricky'
+            }
+        },
+        command: [
+            'npm install',
+            'bower install',
+        ].join('&&')
+    },
     gitPush: {
         command: 'git push'
     },
     gitCommit: {
-        command: 'git commit -a -m \'reverse templates\''
+        command: 'git commit -a -m \'update\''
     },
     gitAdd: {
         command: 'git add .'
@@ -12,7 +36,7 @@ module.exports = {
         ver: '',
         command: 'grunt release:<%= shell.release.ver %>'
     },
-    dryRelease: {
+    testRelease: {
         ver: '',
         command: 'grunt release:<%= shell.release.ver %> --no-write'
     }
