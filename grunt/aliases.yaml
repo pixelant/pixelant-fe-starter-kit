@@ -3,7 +3,7 @@ newrelease:
     - 'prompt:isMaster'
     #=======
     #=======
-    - 'shell:gitAdd'
+    # - 'shell:gitAdd'
     - 'prompt:shell'
     - 'jshint'
     - 'jscs'
@@ -18,8 +18,8 @@ newrelease:
     #=======
     #=======
     # - 'shell:gitAdd'
-    - 'shell:gitCommit'
-    - 'shell:gitPush'
+    # - 'shell:gitCommit'
+    # - 'shell:gitPush'
 
 
 checkjs:

@@ -105,5 +105,6 @@ Please ensure any pull requests of fixes follow this closely. If you notice exis
 
 ***
 
-<img src="https://raw.githubusercontent.com/dmh/img/master/P.png" alt="pixelant" width="100px">
-###[Pixelant](http://www.pixelant.se/)
+![Pixelant](https://raw.githubusercontent.com/dmh/img/master/P.png)
+
+[Pixelant](http://www.pixelant.se/)
