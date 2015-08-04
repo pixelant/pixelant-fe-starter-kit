@@ -1,3 +1,6 @@
+#### v0.1.2 `2015-08-04`
+- **[BUGFIX]** fix gitignore issue ([3a4106c](https://github.com/pixelant/pixelant-fe-starter-kit/commit/3a4106c))
+
 #### v0.1.1 `2015-07-19`
 - **[TEST]** add CI tests ([847b9cb](https://github.com/pixelant/pixelant-fe-starter-kit/commit/847b9cb))
 - **[CHORE]** update configs + mocha tests ([2e8e1aa](https://github.com/pixelant/pixelant-fe-starter-kit/commit/2e8e1aa))
