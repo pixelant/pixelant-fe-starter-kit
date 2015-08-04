@@ -206,7 +206,7 @@ module.exports = generators.Base.extend({
             this.copy(this.projectType + '/.jscsrc', '.jscsrc');
             this.copy(this.projectType + '/.jshintrc', '.jshintrc');
             this.copy(this.projectType + '/.htmlhintrc', '.htmlhintrc');
-            this.copy(this.projectType + '/.gitignore', '.gitignore');
+            this.copy(this.projectType + '/gitignore', '.gitignore');
             this.copy(this.projectType + '/.gitattributes', '.gitattributes');
             this.copy(this.projectType + '/.editorconfig', '.editorconfig');
             this.copy(this.projectType + '/.csslintrc', '.csslintrc');

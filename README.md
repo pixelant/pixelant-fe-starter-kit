@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/pixelant/pixelant-fe-starter-kit.svg?branch=master)](https://travis-ci.org/pixelant/pixelant-fe-starter-kit)
 [![npm](https://img.shields.io/npm/dm/generator-fe-kit.svg)](https://www.npmjs.com/package/generator-fe-kit)
 
-![fe-kit](https://github.com/dmh/img/blob/master/fe-kit.jpg)
+![fe-kit](https://raw.githubusercontent.com/dmh/img/master/fe-kit.jpg)
 
 ### [CHANGELOG](https://github.com/pixelant/pixelant-fe-starter-kit/blob/master/CHANGELOG.md)
 
@@ -53,7 +53,7 @@ yo fe-kit
 * Add ssh link from created repository
 * etc... (depend on type of project)
 
-![fe-kit](https://github.com/dmh/img/blob/master/fe-kit.gif)
+![fe-kit](https://raw.githubusercontent.com/dmh/img/master/fe-kit.gif)
 
 ### To update Pixelant Front-End Starter Kit generator run:
 
@@ -105,5 +105,5 @@ Please ensure any pull requests of fixes follow this closely. If you notice exis
 
 ***
 
-<img src="https://github.com/dmh/img/blob/master/P.png" alt="pixelant" width="100px">
+<img src="https://raw.githubusercontent.com/dmh/img/master/P.png" alt="pixelant" width="100px">
 ###[Pixelant](http://www.pixelant.se/)
