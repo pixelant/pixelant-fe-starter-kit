@@ -11,25 +11,25 @@
 
 // ====== class fo fixed main navigation bar   =======
 
-jQuery(function($) {
-    var navbar = $('.pxa-main-nav');
-    var offsetTop = navbar.offset().top;
-    $(window).on('load scroll', function() {
-        var scrollPos = $(window).scrollTop();
-        if (scrollPos > offsetTop) {
-            $('body:not(.navbarFixed)').addClass('navbarFixed');
-        } else {
-            $('body.navbarFixed').removeClass('navbarFixed');
-        }
-    });
-});
+// jQuery(function($) {
+//     var $mainNavigation = $('.js__main-navigation');
+//     var offsetTop = $mainNavigation.offset().top;
+//     $(window).on('load scroll', function() {
+//         var scrollPos = $(window).scrollTop();
+//         if (scrollPos > offsetTop) {
+//             $('body:not(.main-navigation-pos-fixed)').addClass('main-navigation-pos-fixed');
+//         } else {
+//             $('body.main-navigation-pos-fixed').removeClass('main-navigation-pos-fixed');
+//         }
+//     });
+// });
 
-// === Clicking on search-icon sets focus on search input-field.
-jQuery(function($) {
-    $('.search .icon-t3-search').click(function() {
-        $('.search .form-control').focus();
-    });
-});
+// // === Clicking on search-icon sets focus on search input-field.
+// jQuery(function($) {
+//     $('.search .icon-t3-search').click(function() {
+//         $('.search .form-control').focus();
+//     });
+// });
 
 // === Clicking on search-icon sets focus on search input-field.
 // $(document).ready(function() {

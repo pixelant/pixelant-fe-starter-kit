@@ -41,6 +41,7 @@ big:
 bigReverse:
     - 'replace:bigNameReverse'
     - 'replace:bigLinkReverse'
+
 install-big:
     - 'big'
     - 'shell:installBig'
@@ -55,3 +56,10 @@ reverse:
 install-all:
     - 'install-felayout'
     - 'install-big'
+
+dev:
+    - 'felayout'
+    - 'big'
+    - 'prompt:ask'
+    - 'felayoutReverse'
+    - 'bigReverse'

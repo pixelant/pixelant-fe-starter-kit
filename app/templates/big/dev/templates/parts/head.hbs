@@ -1,13 +1,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta http-equiv="cleartype" content="on">
     <title>{{title}}</title>
     <meta name="description" content="">
-    <meta name="MobileOptimized" content="320">
-    <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css">
     <meta name="robots" content="noindex">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,6 +17,17 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="local.css">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+
+    <!-- Scripts -->
     <script>
         // touchSupport
         touchSupport = (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
@@ -56,8 +63,4 @@
             document.documentElement.className += (' ' + (ie + ' ' + 'IE'));
         };
     </script>
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="components.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="local.css">
 </head>

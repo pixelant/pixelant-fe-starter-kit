@@ -1,84 +1,76 @@
-<nav class="navbar navbar-default pxa-main-nav _main-nav-extended_ js__main-nav-extended {{class}} {{#is this.toggleBtn "true"}}pxa-main-nav-root-btn{{/is}}" role="navigation">
-<div class="container">
+<nav class="main-navigation js__main-navigation"  role="navigation">
 
-{{#is this.toggleBtn "true"}}
-    <button type="button" class="navbar-toggle pxa-nav-toggle-button _animate-to-x_ js__pxa-nav-toggle-button collapsed {{class}}" data-toggle="collapse" data-target="#pxa-root-main-navbar-collapse">
-        <span>toggle menu</span>
-    </button>
-{{/is}}
+<div class="main-navigation__logo">
+    <a href="index.html">
+        <img class="main-navigation__logo-img img-responsive" src="images/logo.png" alt="logo">
+    </a>
+</div>
 
-<div class="collapse navbar-collapse" id="{{#is this.toggleBtn "false"}}pxa-main-navbar-collapse{{/is}}{{#is this.toggleBtn "true"}}pxa-root-main-navbar-collapse{{/is}}">
 
-{{#is this.searchForm "true"}}
-    <div class="navbar-form navbar-right main-nav-search-extended">
-        <form class="search" role="search" action="search.html">
-            <span class="icons icon-t3-search"></span>
-            <div class="form-group" id="the-basics">
-                <input type="search" class="form-control typeahead quicksearch" placeholder="Search" >
-                <button type="submit" style="display:none"></button>
-            </div>
-        </form>
-    </div>
-{{/is}}
 
-<ul class="nav navbar-nav">
+
+<div class="main-navigation__items-wrp js__main-navigation__items-wrp">
+
+<ul class="main-navigation__items-list js__main-navigation__items-list">
+
 {{#withSort pages "data.number"}}
 {{#is data.hideInMenu false}}
 {{#is data.menuLevel 1}}
 {{#is data.subpages true}}
-<li {{#is ../../../../page.title data.title}} class="active"{{/is}}
+<li class="main-navigation__item js__main-navigation__item {{#is ../../../../this.dropdown "true"}}_sub {{/is}}{{#is ../../../../page.title data.title}}_active{{/is}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 2}}
 {{#is ../../../../this.data.title data.parent}}
-{{#is ../../../../../../../page.title  data.title}}class="dropdown active"{{/is}}
+{{#is ../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
 {{/each}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 3}}
 {{#is ../../../../this.data.title data.parent}}
-{{#is ../../../../../../../page.title  data.title}}class="dropdown active"{{/is}}
+{{#is ../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
 {{/each}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 4}}
 {{#is ../../../../this.data.title data.parent}}
-{{#is ../../../../../../../page.title  data.title}}class="dropdown active"{{/is}}
+{{#is ../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
 {{/each}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 5}}
 {{#is ../../../../this.data.title data.parent}}
-{{#is ../../../../../../../page.title  data.title}} class="dropdown active"{{/is}}
+{{#is ../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
-{{/each}}>
-<a  href="{{basename}}.html" class="dropdown-toggle-clickable" >{{data.title}}<span class="icons icon-t3-dropdown-arrow"></span><span class="caret"></span></a><a href="{{basename}}.html"  class="icons icon-t3-dropdown-arrow__mobile js__mobile-dropdown-link" ></a>
-<ul class="dropdown-menu">
+{{/each}}">
+<a  href="{{basename}}.html" class="main-navigation__item-link"  >{{data.title}}</a>
+<a href="{{basename}}.html" class="main-navigation__item-link-mobile js__main-navigation__item-link-mobile"></a>
+<ul class="main-navigation__sub-item-list">
 {{#withSort ../../../../pages "data.number"}}
 {{#is data.menuLevel 2}}
 {{#is ../../../../this.data.title data.parent}}
-<li {{#is ../../../../../../../page.title  data.title}} class="active"{{/is}}
+<li class="main-navigation__sub-item {{#is ../../../../../../../page.title  data.title}}_active{{/is}}
 {{#each ../../../../../../../pages }}
 {{#is data.menuLevel 3}}
 {{#is ../../../../this.data.title data.parent2}}
-{{#is ../../../../../../../../../../page.title  data.title}} class="active"{{/is}}
+{{#is ../../../../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
 {{#is data.menuLevel 4}}
 {{#is ../../../../this.data.title data.parent2}}
-{{#is ../../../../../../../../../../page.title  data.title}} class="active"{{/is}}
+{{#is ../../../../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
 {{#is data.menuLevel 5}}
 {{#is ../../../../this.data.title data.parent2}}
-{{#is ../../../../../../../../../../page.title  data.title}} class="active"{{/is}}
+{{#is ../../../../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
-{{/each  }}>
-<a href="{{basename}}.html">{{data.title}}</a>
+{{/each  }}">
+<a class="main-navigation__sub-item-link" href="{{basename}}.html">{{data.title}}</a>
 </li>
 {{/is}}
 {{/is}}
@@ -86,13 +78,22 @@
 </ul>
 </li>
 {{else}}
-<li{{#is ../../../../page.title data.title}} class="active"{{/is}}><a href="{{basename}}.html">{{data.title}}</a></li>
+<li class="main-navigation__item js__main-navigation__item {{#is ../../../../page.title data.title}}_active{{/is}}"><a class="main-navigation__item-link" href="{{basename}}.html">{{data.title}}</a></li>
 {{/is}}
 {{/is }}
 {{/is }}
 {{/withSort}}
+
 </ul>
 
+<div class="main-navigation-button-next js__main-navigation-button-next"></div>
+<div class="main-navigation-button-prev js__main-navigation-button-prev"></div>
 </div>
+
+<div class="main-navigation__search-btn-wrp">
+    <a class="main-navigation__search-btn js__main-navigation__search-btn" href="">Search<span></span></a>
 </div>
+<div class="main-navigation__search-box js__main-navigation__search-box" ><input placeholder="Search..." type="search"></div>
+
+
 </nav>
