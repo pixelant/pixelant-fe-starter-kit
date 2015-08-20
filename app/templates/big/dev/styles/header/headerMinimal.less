@@ -1,0 +1,294 @@
+// =================================
+// === Header Top ==================
+// =================================
+
+
+.header-wrp {
+    position: relative;
+    height: @header-info-height + @nav-height + 1px;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100%;
+    // transform: translate3d(0, 0, 0);
+    transform: translateY(0);
+    // background: #eee;
+    // transition: transform .2s linear;
+    transition: transform .3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+.header._hide-info{
+    // transition: transform .4s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    // transform: translate3d(0, -30px, 0);
+    transform: translateY(-@header-info-height);
+    // top: -30px;
+}
+.header-info{
+    position: relative;
+    height: @header-info-height;
+    width: 100%;
+    z-index: 1300;
+    background: @header-info-background;
+    .clearfix();
+    font-size: 11px;
+}
+
+
+
+.header-info__contact{
+    float: left;
+    display: none;
+    // font-size: 11px;
+    color: @header-info-color;
+}
+.header-info__contact-tel {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: @header-info-height;
+}
+.header-info__contact-tel-title {
+
+}
+.header-info__contact-tel-link {
+    color: lighten(@link-color, 25%);
+    padding-left: 2px;
+}
+.header-info__contact-email {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 30px;
+
+}
+.header-info__contact-email-title {
+
+}
+.header-info__contact-email-link {
+    color: lighten(@link-color, 25%);
+    padding-left: 2px;
+
+}
+.header-info__social-icons {
+    display: none;
+    float: left;
+    padding: 0 20px;
+
+}
+.header-info__social-icon {
+    display: inline-block;
+    padding: 0 4px;
+    color: @header-info-color;
+}
+.header-info__social-icon .icons{
+    font-size: 18px;
+    line-height: @header-info-height;
+}
+
+.header-info .nav {
+    float: right;
+    margin: 0;
+    padding: 0;
+
+}
+.header-info > .nav > li {
+    display: inline-block;
+
+}
+.header-info > .nav > li > a {
+    padding: 0 14px;
+    line-height: @header-info-height;
+    color: @header-info-color;
+}
+.no-touch .header-info > .nav > li > a:hover {
+    color: lighten(@header-info-color, 15%);
+    background: transparent;
+}
+
+.header-info .nav li>a:before {
+    .icons();
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+    padding-right: 4px;
+}
+.header-info .nav li:nth-child(1)>a:before {
+    content: "\e29e";
+}
+.header-info .nav li:nth-child(2)>a:before {
+    content: "\eb";
+}
+.header-info .nav li:nth-child(3)>a:before {
+    content: "\e253";
+}
+
+
+
+
+
+
+.header-info__language-menu {
+    float: right;
+}
+.header-info__language-menu a{
+    -webkit-tap-highlight-color: rgba(120, 120, 120, 0.3);
+}
+
+.header-info__language-menu-box{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    // position: fixed;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    left: auto;
+    top: 0;
+    background-color: @header-info-background;
+    z-index: 4000;
+    text-align: right;
+    padding-right: 30px;
+
+
+
+
+    // position: absolute;
+    // height: 50px;
+    // width: 100%;
+    // top: 64px;
+    // left: auto;
+    // right: 0;
+    // z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s 0s,visibility 0s .3s;
+}
+
+.header-info__language-menu-box-close-btn:before, .header-info__language-menu-box-close-btn:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    height: 2px;
+    width: 18px;
+    top: 50%;
+    margin-top: -1px;
+    // left: 50%;
+    right: 10px;
+    margin-left: -11px;
+    background: @nav-search-btn-color;
+    // opacity: 0;
+    // transform: translateZ(0);
+    backface-visibility: hidden;
+    // transition: opacity .3s,transform .3s;
+}
+.header-info__language-menu-box-close-btn:before {
+    transform: rotate(135deg);
+}
+
+.header-info__language-menu-box-close-btn:after {
+    transform: rotate(45deg);
+}
+
+
+.header-info__language-menu-box._language-menu-box-visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s 0s,visibility 0s 0s;
+}
+
+.header-info__language-menu-overlay {
+    background: rgba(34,34,34,.3);
+    position: fixed;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: opacity .3s 0s,visibility 0s .3s;
+}
+
+.header-info__language-menu-overlay._language-menu-box-overlay-visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s 0s,visibility 0s 0s;
+}
+
+
+.header-info__language-menu-btn{
+    display: inline-block;
+    line-height: @header-info-height;
+    color: @header-info-color;
+    font-size: 14px;
+    padding: 0 20px;
+}
+.no-touch .header-info__language-menu-btn:hover{
+    color: lighten(@header-info-color, 15%);
+    // background: transparent;
+}
+.header-info__language-menu-box-close-btn {
+    display: block;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+
+
+}
+
+
+.header-info__language-menu-box-item{
+
+    // font-size: 11px;
+    // line-height: 30px;
+    // padding: 0 8px;
+    // display: block;
+    color: @header-info-color;
+    font-size: 12px;
+    padding: 8px 14px;
+    display: block;
+    text-align: left;
+
+}
+.no-touch .header-info__language-menu-box-item:hover{
+    color: lighten(@header-info-color, 15%);
+    // background: transparent;
+}
+
+
+@media (min-width: 768px) {
+    .header-info__contact{
+        display: block;
+    }
+    .header-info__language-menu-box-item{
+        display: inline-block;
+        padding: 0 14px;
+        line-height: @header-info-height;
+    }
+    .header-info__language-menu-box-close-btn {
+        height: @header-info-height;
+    }
+}
+@media (min-width: 992px) {
+    .header-info__social-icons {
+        display: block;
+    }
+}
+
+._freeze-body{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+
+@import "../nav/navMinimal.less";

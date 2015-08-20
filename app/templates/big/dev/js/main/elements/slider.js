@@ -1,15 +1,16 @@
-// =================================
-// Global variables (jshint):
-// =================================
-
 jQuery(function($) {
-    $('.js__swiper-slider').swiper({
-        nextButton: '.js__swiper-slider-next',
-        prevButton: '.js__swiper-slider-prev',
-        pagination: '.js__swiper-slider-pagination',
+    $('.js__img-slider').swiper({
+        nextButton: '.js__img-slider__btn-next',
+        prevButton: '.js__img-slider__btn-prev',
+        pagination: '.js__img-slider__pagination',
         paginationClickable: true,
         preloadImages: false,
-        loop: true,
-        lazyLoading: true
+        // loop: true,
+        // autoplay: 2500,
+        lazyLoading: true,
+        watchSlidesVisibility: true,
+        lazyLoadingInPrevNext: true,
+        speed: 800
     });
+    $('.js__img-slider__caption-p').dotdotdot();
 });

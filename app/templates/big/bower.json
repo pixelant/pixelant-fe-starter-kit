@@ -9,6 +9,7 @@
     "bootstrap-hover-dropdown": "https://github.com/dmh/bootstrap-hover-dropdown.git#5b7e653",
     "slideout.js": "0.1.9",
     "swiper": "3.1.0",
-    "owl.carousel": "2.0.0-beta.3"
+    "owl.carousel": "2.0.0-beta.3",
+    "jQuery.dotdotdot": "~1.7.4"
   }
 }

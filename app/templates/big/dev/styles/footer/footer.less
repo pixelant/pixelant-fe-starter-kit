@@ -1,39 +1,40 @@
-.footer{
-    background-color: #eee;
-    padding-top: 40px;
-}
-
-
-
-
-
-
 // =================================
 // === Footer ======================
 // =================================
-.pxa-footer{
-    background: @footer-bg-color;
+.footer{
+    background: @footer-background;
+    // color: @footer-color;
+    // background: darken(@accent-color, 20%);;
     border-top: 15px solid darken(@footer-color, 11%);
-    margin-top: 30px;
     // padding-top: 20px;
+    margin-top: 30px;
 }
-.pxa-footer p{
+// .footer{
+    // background: @footer-bg-color;
+    // padding-top: 20px;
+// }
+.footer p{
     color: @footer-color;
-    padding-bottom: 5px;
+    // padding-bottom: 5px;
+    font-weight: 300;
 }
-.pxa-footer h1, .pxa-footer h2, .pxa-footer h3, .pxa-footer h4, .pxa-footer h5, .pxa-footer h6{
+.footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6{
     color: @footer-color;
-    text-transform: uppercase;
-    padding-bottom: 8px;
+    font-weight: 400;
+    // text-transform: uppercase;
+    letter-spacing: 0.2px;
+    padding-top: 20px;
+    // padding-bottom: 8px;
 }
-.pxa-footer h4{
-    border-bottom: 1px solid darken(@footer-color, 37%);
+.footer h4{
+    border-bottom: 1px solid darken(@footer-color, 30%);
+    padding-bottom: 4px;
 }
 
 
-.pxa-footer .social .nav-pills  a {
-    color: @footer-color;
-}
+// .footer .social .nav-pills  a {
+//     color: @footer-color;
+// }
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
 
@@ -41,9 +42,9 @@
 // =================================
 // === Footer About ===============
 // =================================
-.footer-about {
-    padding-top: 30px;
-}
+// .footer__about {
+//     padding-top: 30px;
+// }
 
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
@@ -52,16 +53,16 @@
 // =================================
 // === Footer Contact ==============
 // =================================
-.footer-contact {
-    padding-top: 30px;
-}
+// .footer__contact {
+//     padding-top: 30px;
+// }
 @media (min-width: 1200px) {
-    .footer-contact .contact-links a{
+    .footer__contact .contact-links a{
         display: inline;
     }
 }
 @media (min-width: 992px) {
-    .footer-contact .contact-links a{
+    .footer__contact .contact-links a{
         display: block;
     }
 }
@@ -73,27 +74,26 @@
 // =================================
 // === Footer Quick Links===========
 // =================================
-.footer-quick-links{
-    padding-top: 30px;
+.footer__quick-links{
+    // padding-top: 30px;
 }
-.footer-quick-links .nav > li > a{
+.footer__quick-links .nav > li > a{
     transition: color .2s ease;
-    text-transform: uppercase;
     color: @footer-color;
     padding-left: 0;
-    padding-bottom: 0;
+    padding-bottom: 2px;
 }
-.footer-quick-links .nav > li > a:hover, .footer-quick-links .nav > li > a:focus {
+.footer__quick-links .nav > li > a:hover{
     background-color: transparent;
-    color: @t3-main-color-hover;
+    color: @link-hover-color;
 }
-.footer-quick-links .nav > li > a:before {
-    .icons();
-    content: "\101";
-    color: @t3-main-color;
-    font-size: 16px;
-    text-transform: none;
-}
+// .footer__quick-links .nav > li > a:before {
+//     .icons();
+//     content: "\101";
+//     color: @t3-main-color;
+//     font-size: 16px;
+//     text-transform: none;
+// }
 
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
@@ -102,31 +102,31 @@
 // =================================
 // === Footer Map ==================
 // =================================
-.map{
-    margin-left: inherit;
+.footer__map{
+    // margin-left: inherit;
 }
 
-@media (min-width: 768px) {
-    .map{
-        margin-left: -50px;
-    }
-}
-.map a{
+// @media (min-width: 768px) {
+//     .map{
+//         margin-left: -50px;
+//     }
+// }
+.footer__map-icon{
     font-size: 32px;
-    line-height: 1.5;
-    padding-left: 14px;
-    padding-top:6px;
-    color: @t3-main-color;
+    line-height: 1;
+    color: @main-color;
     background: darken(@footer-color, 41%);
     margin-left: 20px;
     width: 60px;
     height: 60px;
     border-radius: 30px;
+    display: block;
+    line-height: 60px;
+    text-align: center;
 }
 
-.map a:hover{
-    text-decoration: none;
-    color: @t3-main-color-hover;
+.footer__map a:hover{
+    color: @link-hover-color;
 }
 
 // -----------------------------------------------------------------------------
@@ -136,60 +136,95 @@
 // =================================
 // === Footer Bottom ===============
 // =================================
-.footer-bottom {
+
+
+
+
+
+
+.footer__bottom {
     margin-top: 30px;
     text-align: center;
 }
-.footer-bottom p{
-    color: darken(@footer-color, 28%);
-}
-.footer-bottom .row{
+// .footer__bottom p{
+//     color: darken(@footer-color, 28%);
+// }
+.footer__bottom .row{
     margin-right: 0;
     margin-left: 0;
 }
-.footer-copyright{
+.footer__bottom-copyright{
     padding-top: 12px;
-    padding-left: 0;
-    padding-right: 0;
+//     padding-left: 0;
+//     padding-right: 0;
     border-top: 1px solid darken(@footer-color, 37%);
 }
-.footer-bottom-nav{
-    padding-top: 6px;
-    padding-right: 0;
-    padding-left: 0;
+.footer__bottom-copyright > p{
+    color: darken(@footer-color, 25%);
+
 }
-.footer-bottom-nav .nav{
+.footer__bottom-nav .nav{
+    // padding-top: 6px;
+    // padding-right: 0;
+    // padding-left: 0;
+    text-align: center;
+}
+.footer__bottom-nav .nav > li{
     display: inline-block;
 }
-.footer-bottom-nav .nav a{
-    color: darken(@footer-color, 28%);
+.footer__bottom-nav .nav > li > a{
+    // color: @footer-color;
+    color: darken(@footer-color, 25%);
+    font-weight: 300;
     text-transform: uppercase;
-    padding-top: 0;
+    // padding-top: 0;
     transition: color .2s ease;
 }
 
-.footer-bottom-nav .nav  li{
-    float: left;
-}
+// .footer__bottom-nav .nav  li{
+//     float: left;
+// }
 
-.footer-bottom-nav .nav  li > a:hover {
-    color: #999;
+.footer__bottom-nav .nav  li > a:hover {
+    color: darken(@footer-color, 15%);
+    // color: @link-hover-color;
     background-color: transparent;
 }
 
 @media (min-width: 992px) {
-    .footer-bottom {
+    .footer__bottom {
         text-align: left;
     }
-    .footer-bottom-nav{
+    .footer__bottom-copyright > p{
+        // padding: 0;
+        margin: 0;
+        height: 40px;
+        line-height: 40px;
+    }
+    .footer__bottom-nav{
         padding-top: 12px;
         border-top: 1px solid darken(@footer-color, 37%);
     }
-    .footer-bottom-nav .nav{
-        display: block;
+    .footer__bottom-nav .nav{
+        // display: block;
+        text-align: right;
     }
-    .footer-bottom-nav .nav{
-        float: right;
+    // .footer__bottom-nav .nav{
+    //     float: right;
+    // }
+
+    .footer__map-icon{
+        // font-size: 32px;
+        // line-height: 1;
+        // color: @main-color;
+        // background: darken(@footer-color, 41%);
+        margin-left: 0;
+        // width: 60px;
+        // height: 60px;
+        // border-radius: 30px;
+        // display: block;
+        // line-height: 60px;
+        // text-align: center;
     }
 
 }
@@ -197,3 +232,21 @@
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
 
+// =================================
+// === Social Icons ================
+// =================================
+.social .nav-pills  a {
+    color: #c6c6c6;
+    background: transparent;
+    padding: 2px ;
+    margin-right: 1px;
+    font-size: 32px;
+    transition: all .2s ease;
+}
+.social .nav-pills a:hover, .social .nav-pills a:focus {
+    color: @link-hover-color;
+    background: transparent;
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------

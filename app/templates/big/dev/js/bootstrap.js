@@ -6,7 +6,7 @@
 // @import '../bower_components/bootstrap/js/carousel.js';
 @import '../bower_components/bootstrap/js/collapse.js';
 @import '../bower_components/bootstrap/js/dropdown.js';
-// @import '../bower_components/bootstrap/js/modal.js';
+@import '../bower_components/bootstrap/js/modal.js';
 // @import '../bower_components/bootstrap/js/tooltip.js';
 // @import '../bower_components/bootstrap/js/popover.js';
 // @import '../bower_components/bootstrap/js/scrollspy.js';

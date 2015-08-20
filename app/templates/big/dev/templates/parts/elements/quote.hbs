@@ -1,15 +1,15 @@
 <blockquote class="quote">
-    <div class="quote-block">
-        <p>{{text}}</p>
-        <span class="icons icon-t3-quoteMark"></span>
+    <div class="quote__body">
+        <p class="quote__body-p">{{text}}</p>
+        <span class="quote__body-icon icons icon-t3-quoteMark"></span>
     </div>
-    <footer>
-        <span>{{name}},</span>
+    <footer class="quote__footer">
+        <span class="quote__footer-name">{{name}},</span>
         {{#if this.title}}
-            <cite title="{{title}}">{{title}},
+            <cite class="quote__footer-title" title="{{title}}">{{title}},
         {{/if}}
         {{#if this.linkText}}
-            <a href="">{{linkText}}</a></cite>
+            <a class="quote__footer-link" href="">{{linkText}}</a></cite>
         {{/if}}
     </footer>
 </blockquote>
