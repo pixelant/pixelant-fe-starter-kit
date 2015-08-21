@@ -10,7 +10,9 @@ jQuery(function($) {
         lazyLoading: true,
         watchSlidesVisibility: true,
         lazyLoadingInPrevNext: true,
-        speed: 800
+        speed: 800,
+        onLazyImageReady: function() {
+            $('.js__img-slider__caption-p').dotdotdot();
+        }
     });
-    $('.js__img-slider__caption-p').dotdotdot();
 });

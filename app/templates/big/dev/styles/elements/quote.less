@@ -1,3 +1,7 @@
+// =========================================================
+// === Quote ===============================================
+// =========================================================
+
 .quote {
     padding: 0;
     margin: 50px 0;
@@ -6,11 +10,12 @@
     border-left: none;
     position: relative;
 }
+
 .quote__footer{
-    // padding-top: 14px;
     padding-left: 70px;
     color: @main-color;
 }
+
 .quote__footer-title{
     color: #646464;
 }
@@ -21,21 +26,17 @@
     position: relative;
     font-size: 14px;
 }
-.quote__body-p:before {
-border-top: 10px solid #f5f5f5;
-border-left: 18px solid transparent;
-border-right: 18px solid #f5f5f5;
-border-bottom: 10px solid transparent;
-// border-top-color: inherit;
-// border-right-color: transparent;
-// border-bottom: none;
-position: absolute;
-bottom: -21px;
-// border-color: #f5f5f5;
-left: 18px;
-content: "";
-}
 
+.quote__body-p:before {
+    border-top: 10px solid #f5f5f5;
+    border-left: 18px solid transparent;
+    border-right: 18px solid #f5f5f5;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    bottom: -21px;
+    left: 18px;
+    content: "";
+}
 
 .quote__body-icon {
     position: absolute;
@@ -43,12 +44,10 @@ content: "";
     top: 16px;
     color: @main-color;
 }
+
 .quote__body-icon:before {
-//     font-family: arial, sans-serif;
-//     content: '\201D';
     font-size: 42px;
 }
-
 
 @media (min-width: 768px) {
     .quote__body-p {
@@ -56,3 +55,6 @@ content: "";
     }
 }
 
+
+// =========================================================
+// =========================================================

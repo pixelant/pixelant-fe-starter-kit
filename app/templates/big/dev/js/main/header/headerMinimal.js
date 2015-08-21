@@ -7,14 +7,14 @@
 jQuery(function($) {
     var $body = $('body');
 
-    var $mainNavigation = $('.js__main-navigation');
-    var $mainNavigationWrp = $mainNavigation.find('.js__main-navigation__items-wrp');
-    var $mainNavigationItem = $mainNavigation.find('.js__main-navigation__item');
-    var $mainNavigationMobileLink = $mainNavigation.find('.js__main-navigation__item-link-mobile');
+    var $mainNavigation = $('.js__main-navigation-min');
+    var $mainNavigationWrp = $mainNavigation.find('.js__main-navigation-min__items-wrp');
+    var $mainNavigationItem = $mainNavigation.find('.js__main-navigation-min__item');
+    var $mainNavigationMobileLink = $mainNavigation.find('.js__main-navigation-min__item-link-mobile');
     var mobileNavBackdrop = '.mobile-nav-backdrop';
-    var $mainNavigationSearchBtn = $mainNavigation.find('.js__main-navigation__search-btn');
-    var $mainNavigationSearchBox = $mainNavigation.find('.js__main-navigation__search-box');
-    var $mainNavigationSearchBoxOverlay = $('.js__main-navigation__search-box-overlay');
+    var $mainNavigationSearchBtn = $mainNavigation.find('.js__main-navigation-min__search-btn');
+    var $mainNavigationSearchBox = $mainNavigation.find('.js__main-navigation-min__search-box');
+    var $mainNavigationSearchBoxOverlay = $('.js__main-navigation-min__search-box-overlay');
 
     var $languageMenuOverlay = $('.js__header-info__language-menu-overlay');
     var $languageMenuBtn = $('.js__header-info__language-menu-btn');
@@ -27,10 +27,10 @@ jQuery(function($) {
         $mainNavigationWrp.swiper({
             spaceBetween: 5,
             slidesPerView: 'auto',
-            nextButton: '.js__main-navigation-button-next',
-            prevButton: '.js__main-navigation-button-prev',
-            slideClass: 'js__main-navigation__item',
-            wrapperClass: 'js__main-navigation__items-list'
+            nextButton: '.js__main-navigation-min-button-next',
+            prevButton: '.js__main-navigation-min-button-prev',
+            slideClass: 'js__main-navigation-min__item',
+            wrapperClass: 'js__main-navigation-min__items-list'
         });
     }
     if (touchSupport) {

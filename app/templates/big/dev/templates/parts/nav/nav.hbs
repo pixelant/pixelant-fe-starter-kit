@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default pxa-main-nav _main-nav-extended_ js__main-nav-extended {{class}} {{#is this.toggleBtn "true"}}pxa-main-nav-root-btn{{/is}}" role="navigation">
+<nav class="main-navigation js__main-navigation navbar navbar-default pxa-main-nav _main-nav-extended_ js__main-nav-extended {{class}} {{#is this.toggleBtn "true"}}pxa-main-nav-root-btn{{/is}}" role="navigation">
 <div class="container">
 
 {{#is this.toggleBtn "true"}}
@@ -7,7 +7,7 @@
     </button>
 {{/is}}
 
-<div class="collapse navbar-collapse" id="{{#is this.toggleBtn "false"}}pxa-main-navbar-collapse{{/is}}{{#is this.toggleBtn "true"}}pxa-root-main-navbar-collapse{{/is}}">
+<div class="main-navigation__items-wrp js__-navigation__items-wrp  collapse navbar-collapse" id="{{#is this.toggleBtn "false"}}pxa-main-navbar-collapse{{/is}}{{#is this.toggleBtn "true"}}pxa-root-main-navbar-collapse{{/is}}">
 
 {{#is this.searchForm "true"}}
     <div class="navbar-form navbar-right main-nav-search-extended">
@@ -21,64 +21,70 @@
     </div>
 {{/is}}
 
-<ul class="nav navbar-nav">
+<ul class="main-navigation__items-list js__main-navigation__items-list nav navbar-nav">
+
 {{#withSort pages "data.number"}}
 {{#is data.hideInMenu false}}
 {{#is data.menuLevel 1}}
 {{#is data.subpages true}}
-<li {{#is ../../../../page.title data.title}} class="active"{{/is}}
+<li class="main-navigation__item js__main-navigation__item {{#is ../../../../this.dropdown "true"}}_sub {{/is}}{{#is ../../../../page.title data.title}}_active{{/is}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 2}}
 {{#is ../../../../this.data.title data.parent}}
-{{#is ../../../../../../../page.title  data.title}}class="dropdown active"{{/is}}
+{{#is ../../../../../../../page.title  data.title}}dropdown _active{{/is}}
 {{/is}}
 {{/is}}
 {{/each}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 3}}
 {{#is ../../../../this.data.title data.parent}}
-{{#is ../../../../../../../page.title  data.title}}class="dropdown active"{{/is}}
+{{#is ../../../../../../../page.title  data.title}}dropdown _active{{/is}}
 {{/is}}
 {{/is}}
 {{/each}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 4}}
 {{#is ../../../../this.data.title data.parent}}
-{{#is ../../../../../../../page.title  data.title}}class="dropdown active"{{/is}}
+{{#is ../../../../../../../page.title  data.title}}dropdown _active{{/is}}
 {{/is}}
 {{/is}}
 {{/each}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 5}}
 {{#is ../../../../this.data.title data.parent}}
-{{#is ../../../../../../../page.title  data.title}} class="dropdown active"{{/is}}
+{{#is ../../../../../../../page.title  data.title}}dropdown _active{{/is}}
 {{/is}}
 {{/is}}
-{{/each}}>
-<a  href="{{basename}}.html" class="dropdown-toggle-clickable" >{{data.title}}<span class="icons icon-t3-dropdown-arrow"></span><span class="caret"></span></a><a href="{{basename}}.html"  class="icons icon-t3-dropdown-arrow__mobile js__mobile-dropdown-link" ></a>
-<ul class="dropdown-menu">
+{{/each}}">
+{{!-- <a  href="{{basename}}.html" class="dropdown-toggle-clickable" >{{data.title}}<span class="icons icon-t3-dropdown-arrow"></span></a><a href="{{basename}}.html"  class="icons icon-t3-dropdown-arrow__mobile js__mobile-dropdown-link" ></a> --}}
+
+<a  href="{{basename}}.html" class="main-navigation__item-link dropdown-toggle-clickable" >{{data.title}}</a>
+<a href="{{basename}}.html" class="main-navigation__item-link-mobile js__main-navigation__item-link-mobile icons icon-t3-dropdown-arrow__mobile js__mobile-dropdown-link"></a>
+
+
+<ul class="main-navigation__sub-item-list dropdown-menu">
 {{#withSort ../../../../pages "data.number"}}
 {{#is data.menuLevel 2}}
 {{#is ../../../../this.data.title data.parent}}
-<li {{#is ../../../../../../../page.title  data.title}} class="active"{{/is}}
+<li class="main-navigation__sub-item {{#is ../../../../../../../page.title  data.title}}_active{{/is}}
 {{#each ../../../../../../../pages }}
 {{#is data.menuLevel 3}}
 {{#is ../../../../this.data.title data.parent2}}
-{{#is ../../../../../../../../../../page.title  data.title}} class="active"{{/is}}
+{{#is ../../../../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
 {{#is data.menuLevel 4}}
 {{#is ../../../../this.data.title data.parent2}}
-{{#is ../../../../../../../../../../page.title  data.title}} class="active"{{/is}}
+{{#is ../../../../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
 {{#is data.menuLevel 5}}
 {{#is ../../../../this.data.title data.parent2}}
-{{#is ../../../../../../../../../../page.title  data.title}} class="active"{{/is}}
+{{#is ../../../../../../../../../../page.title  data.title}}_active{{/is}}
 {{/is}}
 {{/is}}
-{{/each  }}>
-<a href="{{basename}}.html">{{data.title}}</a>
+{{/each  }}">
+<a class="main-navigation__sub-item-link" href="{{basename}}.html">{{data.title}}</a>
 </li>
 {{/is}}
 {{/is}}
@@ -86,7 +92,7 @@
 </ul>
 </li>
 {{else}}
-<li{{#is ../../../../page.title data.title}} class="active"{{/is}}><a href="{{basename}}.html">{{data.title}}</a></li>
+<li class="main-navigation__item js__main-navigation__item {{#is ../../../../page.title data.title}}_active{{/is}}"><a class="main-navigation__item-link" href="{{basename}}.html">{{data.title}}</a></li>
 {{/is}}
 {{/is }}
 {{/is }}

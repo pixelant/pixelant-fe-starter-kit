@@ -1,40 +1,29 @@
-// =================================
-// === Footer ======================
-// =================================
+// =========================================================
+// === Footer ==============================================
+// =========================================================
 .footer{
     background: @footer-background;
-    // color: @footer-color;
-    // background: darken(@accent-color, 20%);;
-    border-top: 15px solid darken(@footer-color, 11%);
-    // padding-top: 20px;
+    border-top: 15px solid lighten(@footer-background, 20%);
     margin-top: 30px;
 }
-// .footer{
-    // background: @footer-bg-color;
-    // padding-top: 20px;
-// }
 .footer p{
     color: @footer-color;
-    // padding-bottom: 5px;
     font-weight: 300;
 }
 .footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6{
     color: @footer-color;
     font-weight: 400;
-    // text-transform: uppercase;
     letter-spacing: 0.2px;
     padding-top: 20px;
-    // padding-bottom: 8px;
 }
 .footer h4{
-    border-bottom: 1px solid darken(@footer-color, 30%);
+    border-bottom: 1px solid lighten(@footer-background, 20%);
     padding-bottom: 4px;
 }
+.no-touch .footer a:hover{
+    color: @footer-link-hover-color;
+}
 
-
-// .footer .social .nav-pills  a {
-//     color: @footer-color;
-// }
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
 
@@ -42,9 +31,6 @@
 // =================================
 // === Footer About ===============
 // =================================
-// .footer__about {
-//     padding-top: 30px;
-// }
 
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
@@ -53,9 +39,10 @@
 // =================================
 // === Footer Contact ==============
 // =================================
-// .footer__contact {
-//     padding-top: 30px;
-// }
+.footer__contact .contact-links {
+    list-style: none;
+    padding: 0;
+}
 @media (min-width: 1200px) {
     .footer__contact .contact-links a{
         display: inline;
@@ -75,25 +62,27 @@
 // === Footer Quick Links===========
 // =================================
 .footer__quick-links{
-    // padding-top: 30px;
+}
+.footer__quick-links .nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer__quick-links .nav > li{
+    padding: 8px 0;
 }
 .footer__quick-links .nav > li > a{
     transition: color .2s ease;
-    color: @footer-color;
+    color: @footer-link-color;
     padding-left: 0;
     padding-bottom: 2px;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 .footer__quick-links .nav > li > a:hover{
     background-color: transparent;
-    color: @link-hover-color;
+    color: @footer-link-hover-color;
 }
-// .footer__quick-links .nav > li > a:before {
-//     .icons();
-//     content: "\101";
-//     color: @t3-main-color;
-//     font-size: 16px;
-//     text-transform: none;
-// }
 
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
@@ -102,139 +91,32 @@
 // =================================
 // === Footer Map ==================
 // =================================
-.footer__map{
-    // margin-left: inherit;
-}
-
-// @media (min-width: 768px) {
-//     .map{
-//         margin-left: -50px;
-//     }
-// }
-.footer__map-icon{
-    font-size: 32px;
-    line-height: 1;
-    color: @main-color;
-    background: darken(@footer-color, 41%);
-    margin-left: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    display: block;
-    line-height: 60px;
-    text-align: center;
-}
-
-.footer__map a:hover{
-    color: @link-hover-color;
-}
-
-// -----------------------------------------------------------------------------
-// -----------------------------------------------------------------------------
-
-
-// =================================
-// === Footer Bottom ===============
-// =================================
-
-
-
-
-
-
-.footer__bottom {
-    margin-top: 30px;
-    text-align: center;
-}
-// .footer__bottom p{
-//     color: darken(@footer-color, 28%);
-// }
-.footer__bottom .row{
-    margin-right: 0;
-    margin-left: 0;
-}
-.footer__bottom-copyright{
-    padding-top: 12px;
-//     padding-left: 0;
-//     padding-right: 0;
-    border-top: 1px solid darken(@footer-color, 37%);
-}
-.footer__bottom-copyright > p{
-    color: darken(@footer-color, 25%);
-
-}
-.footer__bottom-nav .nav{
-    // padding-top: 6px;
-    // padding-right: 0;
-    // padding-left: 0;
-    text-align: center;
-}
-.footer__bottom-nav .nav > li{
-    display: inline-block;
-}
-.footer__bottom-nav .nav > li > a{
-    // color: @footer-color;
-    color: darken(@footer-color, 25%);
-    font-weight: 300;
-    text-transform: uppercase;
-    // padding-top: 0;
-    transition: color .2s ease;
-}
-
-// .footer__bottom-nav .nav  li{
-//     float: left;
-// }
-
-.footer__bottom-nav .nav  li > a:hover {
-    color: darken(@footer-color, 15%);
-    // color: @link-hover-color;
-    background-color: transparent;
-}
-
-@media (min-width: 992px) {
-    .footer__bottom {
-        text-align: left;
+    .footer__map{
     }
-    .footer__bottom-copyright > p{
-        // padding: 0;
-        margin: 0;
-        height: 40px;
-        line-height: 40px;
-    }
-    .footer__bottom-nav{
-        padding-top: 12px;
-        border-top: 1px solid darken(@footer-color, 37%);
-    }
-    .footer__bottom-nav .nav{
-        // display: block;
-        text-align: right;
-    }
-    // .footer__bottom-nav .nav{
-    //     float: right;
-    // }
-
     .footer__map-icon{
-        // font-size: 32px;
-        // line-height: 1;
-        // color: @main-color;
-        // background: darken(@footer-color, 41%);
-        margin-left: 0;
-        // width: 60px;
-        // height: 60px;
-        // border-radius: 30px;
-        // display: block;
-        // line-height: 60px;
-        // text-align: center;
+        font-size: 32px;
+        line-height: 1;
+        color: @main-color;
+        background: darken(@footer-background, 5%);
+        margin-left: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        display: block;
+        line-height: 60px;
+        text-align: center;
     }
-
-}
-
-// -----------------------------------------------------------------------------
-// -----------------------------------------------------------------------------
 
 // =================================
 // === Social Icons ================
 // =================================
+.social .nav-pills {
+    list-style: none;
+    padding: 0;
+}
+.social .nav-pills > li{
+    display: inline-block;
+}
 .social .nav-pills  a {
     color: #c6c6c6;
     background: transparent;
@@ -243,10 +125,67 @@
     font-size: 32px;
     transition: all .2s ease;
 }
-.social .nav-pills a:hover, .social .nav-pills a:focus {
-    color: @link-hover-color;
-    background: transparent;
+
+// ---------------------------------------------------------
+// ---------------------------------------------------------
+
+
+// =================================
+// === Footer Bottom ===============
+// =================================
+
+.footer__bottom {
+    margin-top: 30px;
+    text-align: center;
+    background: @footer-background;
+    padding-bottom: 10px;
+}
+.footer__bottom .row{
+    margin-right: 0;
+    margin-left: 0;
+}
+.footer__bottom-copyright{
+    padding-top: 12px;
+    border-top: 1px solid lighten(@footer-background, 20%);
+}
+.footer__bottom-copyright > p{
+    color: darken(@footer-color, 25%);
+
+}
+.footer__bottom-nav .nav{
+    padding: 0;
+    text-align: center;
+}
+.footer__bottom-nav .nav > li{
+    display: inline-block;
+}
+.footer__bottom-nav .nav > li > a{
+    color: darken(@footer-color, 25%);
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: color .2s ease;
+    padding: 0 10px;
 }
 
+@media (min-width: 992px) {
+    .footer__bottom {
+        text-align: left;
+    }
+    .footer__bottom-copyright > p{
+        margin: 0;
+    }
+    .footer__bottom-nav{
+        padding-top: 12px;
+        border-top: 1px solid lighten(@footer-background, 20%);
+    }
+    .footer__bottom-nav .nav{
+        text-align: right;
+    }
+
+    .footer__map-icon{
+        margin-left: 0;
+    }
+
+}
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------

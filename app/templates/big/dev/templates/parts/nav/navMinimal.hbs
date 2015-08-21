@@ -1,23 +1,21 @@
-<nav class="main-navigation js__main-navigation"  role="navigation">
+<nav class="main-navigation-min js__main-navigation-min"  role="navigation">
 
-<div class="main-navigation__logo">
+<div class="main-navigation-min__logo">
     <a href="index.html">
-        <img class="main-navigation__logo-img img-responsive" src="images/logo.png" alt="logo">
+        <img class="main-navigation-min__logo-img img-responsive" src="images/logo.png" alt="logo">
     </a>
 </div>
 
 
+<div class="main-navigation-min__items-wrp js__main-navigation-min__items-wrp">
 
-
-<div class="main-navigation__items-wrp js__main-navigation__items-wrp">
-
-<ul class="main-navigation__items-list js__main-navigation__items-list">
+<ul class="main-navigation-min__items-list js__main-navigation-min__items-list">
 
 {{#withSort pages "data.number"}}
 {{#is data.hideInMenu false}}
 {{#is data.menuLevel 1}}
 {{#is data.subpages true}}
-<li class="main-navigation__item js__main-navigation__item {{#is ../../../../this.dropdown "true"}}_sub {{/is}}{{#is ../../../../page.title data.title}}_active{{/is}}
+<li class="main-navigation-min__item js__main-navigation-min__item {{#is ../../../../this.dropdown "true"}}_sub {{/is}}{{#is ../../../../page.title data.title}}_active{{/is}}
 {{#each ../../../../pages }}
 {{#is data.menuLevel 2}}
 {{#is ../../../../this.data.title data.parent}}
@@ -46,13 +44,13 @@
 {{/is}}
 {{/is}}
 {{/each}}">
-<a  href="{{basename}}.html" class="main-navigation__item-link"  >{{data.title}}</a>
-<a href="{{basename}}.html" class="main-navigation__item-link-mobile js__main-navigation__item-link-mobile"></a>
-<ul class="main-navigation__sub-item-list">
+<a  href="{{basename}}.html" class="main-navigation-min__item-link"  >{{data.title}}</a>
+<a href="{{basename}}.html" class="main-navigation-min__item-link-mobile js__main-navigation-min__item-link-mobile"></a>
+<ul class="main-navigation-min__sub-item-list">
 {{#withSort ../../../../pages "data.number"}}
 {{#is data.menuLevel 2}}
 {{#is ../../../../this.data.title data.parent}}
-<li class="main-navigation__sub-item {{#is ../../../../../../../page.title  data.title}}_active{{/is}}
+<li class="main-navigation-min__sub-item {{#is ../../../../../../../page.title  data.title}}_active{{/is}}
 {{#each ../../../../../../../pages }}
 {{#is data.menuLevel 3}}
 {{#is ../../../../this.data.title data.parent2}}
@@ -70,7 +68,7 @@
 {{/is}}
 {{/is}}
 {{/each  }}">
-<a class="main-navigation__sub-item-link" href="{{basename}}.html">{{data.title}}</a>
+<a class="main-navigation-min__sub-item-link" href="{{basename}}.html">{{data.title}}</a>
 </li>
 {{/is}}
 {{/is}}
@@ -78,7 +76,7 @@
 </ul>
 </li>
 {{else}}
-<li class="main-navigation__item js__main-navigation__item {{#is ../../../../page.title data.title}}_active{{/is}}"><a class="main-navigation__item-link" href="{{basename}}.html">{{data.title}}</a></li>
+<li class="main-navigation-min__item js__main-navigation-min__item {{#is ../../../../page.title data.title}}_active{{/is}}"><a class="main-navigation-min__item-link" href="{{basename}}.html">{{data.title}}</a></li>
 {{/is}}
 {{/is }}
 {{/is }}
@@ -86,14 +84,14 @@
 
 </ul>
 
-<div class="main-navigation-button-next js__main-navigation-button-next"></div>
-<div class="main-navigation-button-prev js__main-navigation-button-prev"></div>
+<div class="main-navigation-min-button-next js__main-navigation-min-button-next"></div>
+<div class="main-navigation-min-button-prev js__main-navigation-min-button-prev"></div>
 </div>
 
-<div class="main-navigation__search-btn-wrp">
-    <a class="main-navigation__search-btn js__main-navigation__search-btn" href="">Search<span></span></a>
+<div class="main-navigation-min__search-btn-wrp">
+    <a class="main-navigation-min__search-btn js__main-navigation-min__search-btn" href="">Search<span></span></a>
 </div>
-<div class="main-navigation__search-box js__main-navigation__search-box" ><input placeholder="Search..." type="search"></div>
+<div class="main-navigation-min__search-box js__main-navigation-min__search-box" ><input placeholder="Search..." type="search"></div>
 
 
 </nav>
