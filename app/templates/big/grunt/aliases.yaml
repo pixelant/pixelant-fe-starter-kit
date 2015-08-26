@@ -104,3 +104,19 @@ base:
     - 'copy:baseJs'
     - 'copy:bootstrap'
     #---------------
+
+
+
+customizer:
+    - 'clean:tempFolder'
+    - 'copy:customizerBase'
+    - 'copy:customizerHelper'
+    - 'copy:customizerComponents'
+    - 'replace:customizerHead'
+    - 'replace:customizerScript'
+    - 'replace:customizerBody'
+    - 'replace:customizerFonts'
+    - 'concurrent:customizer'
+    - 'connect:localhost'
+    - 'notify:server'
+    - 'watch'

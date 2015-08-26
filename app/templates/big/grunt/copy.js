@@ -79,5 +79,34 @@ module.exports = {
             'gb.svg',
             'us.svg'
         ]
+    },
+    customizerBase: {
+        expand: true,
+        dot: true,
+        cwd: '<%= dev %>',
+        dest: '<%= temp %>',
+        src: [
+            'templates/parts/**',
+            'templates/layouts/{,*/}*.*',
+            'styles/**'
+        ]
+    },
+    customizerHelper: {
+        expand: true,
+        dot: true,
+        cwd: 'grunt/helpers',
+        dest: '<%= temp %>/templates/parts',
+        src: [
+            'customizer/{,*/}*.*'
+        ]
+    },
+    customizerComponents: {
+        expand: true,
+        dot: true,
+        cwd: '<%= dev %>',
+        dest: '<%= temp %>',
+        src: [
+            'bower_components/**'
+        ]
     }
 };

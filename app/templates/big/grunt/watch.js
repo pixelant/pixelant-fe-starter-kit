@@ -1,7 +1,7 @@
 module.exports = {
     html: {
         files: ['<%= dev %>/templates/**/*.hbs'],
-        tasks: ['assemble:allTemplates']
+        tasks: ['newer:assemble:allTemplates']
     },
     less: {
         files: ['<%= dev %>/styles/**/*.less', '!<%= dev %>/styles/bootstrap.less', '!<%= dev %>/styles/local.less', '!<%= dev %>/styles/components.less'],
@@ -46,6 +46,10 @@ module.exports = {
     copyToRoot: {
         files: '<%= dev %>/copyToRoot/{,*/}*.*',
         tasks: 'newer:copy:toRoot'
+    },
+    customizer: {
+        files: 'grunt/helpers/customizer/{,*/}*.*',
+        tasks: ['newer:copy:customizerHelper', 'assemble:customizer']
     },
     livereload: {
         options: {

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
             big: 'big',
             dev: 'dev',
             temp: 'temp',
-            bc: 'dev/bower_components/',
+            bc: 'dev/bower_components',
             repo: '<%= sshLink %>'
         },
         jitGrunt: {
