@@ -6,11 +6,8 @@
     "isotope": "2.0.0",
     "flag-icon-css": "0.7.1",
     "typeahead.js": "0.10.2",
-    "bootstrap-hover-dropdown": "https://github.com/dmh/bootstrap-hover-dropdown.git#5b7e653",
-    "picker": "https://github.com/Dissimulate/Picker.git#5a71c17",
-    "slideout.js": "0.1.9",
     "swiper": "3.1.0",
-    "owl.carousel": "2.0.0-beta.3",
-    "jQuery.dotdotdot": "1.7.4"
+    "jQuery.dotdotdot": "1.7.4",
+    "spectrum": "1.7.1"
   }
 }
