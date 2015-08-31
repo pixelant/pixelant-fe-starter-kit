@@ -18,5 +18,21 @@ module.exports = {
     components: {
         src: '<%= dev %>/js/components.js',
         dest: '<%= temp %>/components.js',
+    },
+    mainLess: {
+        src: '<%= dev %>/styles/main.less',
+        dest: '<%= temp %>/main.less',
+    },
+    bootstrapLess: {
+        src: '<%= dev %>/styles/bootstrap.less',
+        dest: '<%= temp %>/bootstrap.less',
+    },
+    localLess: {
+        src: '<%= dev %>/styles/local.less',
+        dest: '<%= temp %>/local.less',
+    },
+    componentsLess: {
+        src: '<%= dev %>/styles/components.less',
+        dest: '<%= temp %>/components.less',
     }
 };

@@ -61,17 +61,17 @@ jQuery(function($) {
         e.preventDefault();
         $languageMenuBox.addClass('_language-menu-box-visible');
         $languageMenuOverlay.toggleClass('_language-menu-box-overlay-visible');
-        $body.toggleClass('_freeze-body');
+        // $body.toggleClass('_freeze-body');
     });
     $languageMenuOverlay.on('click', function() {
         $(this).toggleClass('_language-menu-box-overlay-visible');
         $languageMenuBox.removeClass('_language-menu-box-visible');
-        $body.toggleClass('_freeze-body');
+        // $body.toggleClass('_freeze-body');
     });
     $languageMenuBoxCloseBtn.on('click', function() {
         $languageMenuOverlay.toggleClass('_language-menu-box-overlay-visible');
         $languageMenuBox.removeClass('_language-menu-box-visible');
-        $body.toggleClass('_freeze-body');
+        // $body.toggleClass('_freeze-body');
     });
 
     var firstTime = true;

@@ -12,7 +12,7 @@
     width: 100%;
     margin: 0 auto;
     padding-bottom: 50px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid @header-border-color;
 }
 
 .header-top{
@@ -473,7 +473,7 @@
 .main-navigation__item-link {
     color: @nav-link-color;
     width: 100%;
-    border-top: 1px solid @nav-border-color;
+    border-top: 1px solid @header-border-color;
     display: block;
 
 
@@ -507,7 +507,7 @@
     z-index: 2000;
     text-align: center;
     background: @nav-background-color;
-    border-top: 1px solid @nav-border-color;
+    border-top: 1px solid @header-border-color;
     padding: 0;
     color: rgba(0, 0, 0, 0) !important;
     line-height: @nav-height;
@@ -600,8 +600,8 @@
     .main-navigation {
         position: relative;
         top: 0;
-        border-top: 1px solid @nav-border-color;
-        border-bottom: 2px solid @nav-border-color;
+        border-top: 1px solid @header-border-color;
+        border-bottom: 2px solid @header-border-color;
     }
     .main-navigation-fixed .main-navigation{
         position: fixed;

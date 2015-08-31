@@ -1,7 +1,7 @@
 module.exports = {
     html: {
         files: ['<%= dev %>/templates/**/*.hbs'],
-        tasks: ['newer:assemble:allTemplates']
+        tasks: ['assemble:allTemplates']
     },
     less: {
         files: ['<%= dev %>/styles/**/*.less', '!<%= dev %>/styles/bootstrap.less', '!<%= dev %>/styles/local.less', '!<%= dev %>/styles/components.less'],
