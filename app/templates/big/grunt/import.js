@@ -30,9 +30,5 @@ module.exports = {
     localLess: {
         src: '<%= dev %>/styles/local.less',
         dest: '<%= temp %>/local.less',
-    },
-    componentsLess: {
-        src: '<%= dev %>/styles/components.less',
-        dest: '<%= temp %>/components.less',
     }
 };

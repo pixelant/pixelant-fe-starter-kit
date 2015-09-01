@@ -88,7 +88,7 @@ module.exports = {
         src: [
             'templates/parts/**',
             'templates/layouts/{,*/}*.*',
-            'styles/**'
+            'styles/customVariables.less'
         ]
     },
     customizerHelper: {
@@ -100,13 +100,23 @@ module.exports = {
             'customizer/{,*/}*.*'
         ]
     },
+    // customizerComponents: {
+    //     expand: true,
+    //     dot: true,
+    //     cwd: '<%= dev %>',
+    //     dest: '<%= temp %>',
+    //     src: [
+    //         'bower_components/**'
+    //     ]
+    // }
     customizerComponents: {
         expand: true,
         dot: true,
         cwd: '<%= dev %>',
         dest: '<%= temp %>',
         src: [
-            'bower_components/**'
+            'bower_components/less/**',
+            'bower_components/spectrum/**'
         ]
     }
 };

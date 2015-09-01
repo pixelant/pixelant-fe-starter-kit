@@ -54,15 +54,15 @@ module.exports = {
                 to: '{{> customizerBody}}'
             }
         ]
-    },
-    customizerFonts: {
-        src: ['<%= temp %>/styles/icons/icons.less'],
-        overwrite: true,
-        replacements: [
-            {
-                from: 'url(\'fonts',
-                to: 'url(\'../fonts'
-            }
-        ]
     }
+    // customizerFonts: {
+    //     src: ['<%= temp %>/styles/icons/icons.less'],
+    //     overwrite: true,
+    //     replacements: [
+    //         {
+    //             from: 'url(\'fonts',
+    //             to: 'url(\'../fonts'
+    //         }
+    //     ]
+    // }
 };

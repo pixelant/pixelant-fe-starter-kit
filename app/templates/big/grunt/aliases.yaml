@@ -112,11 +112,15 @@ customizer:
     - 'copy:customizerBase'
     - 'copy:customizerHelper'
     - 'copy:customizerComponents'
+    - 'import:mainLess'
+    - 'import:bootstrapLess'
+    - 'less:components'
     - 'replace:customizerHead'
     - 'replace:customizerScript'
     - 'replace:customizerBody'
-    - 'replace:customizerFonts'
     - 'concurrent:customizer'
     - 'connect:localhost'
     - 'notify:server'
     - 'watch'
+
+
