@@ -115,8 +115,9 @@ module.exports = {
         cwd: '<%= dev %>',
         dest: '<%= temp %>',
         src: [
-            'bower_components/less/**',
-            'bower_components/spectrum/**'
+            'bower_components/less/dist/less.min.js',
+            'bower_components/spectrum/spectrum.css',
+            'bower_components/spectrum/spectrum.js'
         ]
     }
 };

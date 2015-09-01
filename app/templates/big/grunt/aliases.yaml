@@ -124,3 +124,18 @@ customizer:
     - 'watch'
 
 
+publishCustomizerSite:
+    - 'clean:tempFolder'
+    - 'copy:customizerBase'
+    - 'copy:customizerHelper'
+    - 'copy:customizerComponents'
+    - 'import:mainLess'
+    - 'import:bootstrapLess'
+    - 'less:components'
+    - 'replace:customizerHead'
+    - 'replace:customizerScript'
+    - 'replace:customizerBody'
+    - 'concurrent:customizer'
+    - 'connect:localhost'
+    - 'buildcontrol:customizerSite'
+
