@@ -1,0 +1,3 @@
+[submodule "app/templates/felayout_ricky"]
+	path = app/templates/felayout_ricky
+	url = https://dmytro_hrynevych@bitbucket.org/pixelant/felayout_ricky.git

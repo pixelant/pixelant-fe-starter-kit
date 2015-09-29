@@ -25,8 +25,9 @@
   "dependencies": {
     "chalk": "1.0.0",
     "semver": "4.3.6",
+    "update-notifier": "0.5.0",
     "yeoman-generator": "0.20.1",
-    "update-notifier": "0.5.0"
+    "deep-extend": "0.4.0"
   },
   "devDependencies": {
     "grunt": "0.4.5",
@@ -39,7 +40,7 @@
     "grunt-text-replace": "0.4.0",
     "jshint-stylish": "2.0.0",
     "load-grunt-config": "0.17.1",
-    "time-grunt": "1.2.1",
-    "mocha": "2.2.5"
+    "mocha": "2.2.5",
+    "time-grunt": "1.2.1"
   }
 }

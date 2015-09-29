@@ -1,6 +1,7 @@
 var generators = require('yeoman-generator');
 var chalk = require('chalk');
 var updateNotifier = require('update-notifier');
+var extend = require('deep-extend');
 
 // Colors
 var warning = chalk.bold.red;
@@ -192,39 +193,114 @@ module.exports = generators.Base.extend({
             promptRecursive();
         },
     },
-    // configuring: {
+    configuring: {
+        packageJson: function() {
+            var currentPkg = this.fs.readJSON(this.sourceRoot() + '/' + this.projectType + '/package.json');
+            var pkg = {
+                name: this.projectName,
+                version: '0.0.1',
+                description: 'Front-End layout for ' + this.projectName + ' project',
+                homepage: '',
+                repository: {
+                    type: 'git',
+                    url: ''
+                },
+            };
+            this.fs.writeJSON('package.json', extend(currentPkg, pkg));
+        },
+        bowerJson: function() {
+            var currentPkg = this.fs.readJSON(this.sourceRoot() + '/' + this.projectType + '/bower.json');
+            var pkg = {
+                name: this.projectName
+            };
+            this.fs.writeJSON('bower.json', extend(currentPkg, pkg));
+        },
+        gruntfile: function() {
+            var rrr = this.fs.read(this.sourceRoot() + '/' + this.projectType + '/Gruntfile.js');
+            var wwww = rrr.replace(/(repo: '')/g, 'repo: \'' + this.sshLink + '\'');
+            this.fs.write('Gruntfile.js', wwww);
+        },
+    },
+    // default: {
     // },
-    default: {
-        app: function() {
-            this.directory(this.projectType + '/dev/copyToRoot', 'dev/copyToRoot');
-            this.directory(this.projectType + '/dev/fonts', 'dev/fonts');
-            this.directory(this.projectType + '/dev/images', 'dev/images');
-            this.directory(this.projectType + '/dev/js', 'dev/js');
-            this.directory(this.projectType + '/dev/styles', 'dev/styles');
-            this.directory(this.projectType + '/dev/templates', 'dev/templates');
-            this.bulkDirectory(this.projectType + '/grunt', 'grunt');
-            this.copy(this.projectType + '/.jscsrc', '.jscsrc');
-            this.copy(this.projectType + '/.jshintrc', '.jshintrc');
-            this.copy(this.projectType + '/.htmlhintrc', '.htmlhintrc');
-            this.copy(this.projectType + '/gitignore', '.gitignore');
-            this.copy(this.projectType + '/.gitattributes', '.gitattributes');
-            this.copy(this.projectType + '/.editorconfig', '.editorconfig');
-            this.copy(this.projectType + '/.csslintrc', '.csslintrc');
-            this.copy(this.projectType + '/.bowerrc', '.bowerrc');
-            this.template(this.projectType + '/Gruntfile.js', 'Gruntfile.js');
-            this.template(this.projectType + '/package.json', 'package.json');
-            this.template(this.projectType + '/bower.json', 'bower.json');
-            this.template(this.projectType + '/README.md', 'README.md');
+    writing: {
+        copyFiles: function() {
+            this.fs.copy(
+                this.templatePath(this.projectType + '/dev/copyToRoot'),
+                this.destinationPath('dev/copyToRoot')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/dev/fonts'),
+                this.destinationPath('dev/fonts')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/dev/images'),
+                this.destinationPath('dev/images')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/dev/js'),
+                this.destinationPath('dev/js')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/dev/styles'),
+                this.destinationPath('dev/styles')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/dev/templates'),
+                this.destinationPath('dev/templates')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/grunt'),
+                this.destinationPath('grunt')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/.jscsrc'),
+                this.destinationPath('.jscsrc')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/.jshintrc'),
+                this.destinationPath('.jshintrc')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/.htmlhintrc'),
+                this.destinationPath('.htmlhintrc')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/.gitignore'),
+                this.destinationPath('.gitignore')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/.gitattributes'),
+                this.destinationPath('.gitattributes')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/.editorconfig'),
+                this.destinationPath('.editorconfig')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/.csslintrc'),
+                this.destinationPath('.csslintrc')
+            );
+            this.fs.copy(
+                this.templatePath(this.projectType + '/.bowerrc'),
+                this.destinationPath('.bowerrc')
+            );
+            this.fs.copyTpl(
+                this.templatePath('README.md'),
+                this.destinationPath('README.md'),
+                { name: this.projectName }
+            );
             if (this.projectType === 'felayout_ricky') {
-                this.directory(this.projectType + '/dev/helpers', 'dev/helpers');
+                this.fs.copyTpl(
+                    this.templatePath(this.projectType + '/dev/helpers'),
+                    this.destinationPath('dev/helpers')
+                );
             }
             // if (this.projectType === 'big') {
             // }
         },
-
     },
-    // writing: {
-    // },
+
     install: {
         npmAndBower: function() {
             this.npmInstall();
