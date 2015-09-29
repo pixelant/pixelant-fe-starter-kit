@@ -12,10 +12,8 @@ module.exports = function(grunt) {
         },
         jitGrunt: {
             staticMappings: {
-                replace: 'grunt-text-replace',
                 changelog: 'grunt-templated-changelog'
             }
         }
     });
-    grunt.loadNpmTasks('grunt-text-replace');
 };

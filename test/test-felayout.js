@@ -65,6 +65,9 @@ describe('fe-kit', function() {
         it('adds version to package.json', function() {
             assert.fileContent('package.json', '"version": "0.0.1"');
         });
+        it('adds version to bower.json', function() {
+            assert.fileContent('bower.json', '"name": "test"');
+        });
 
     });
 });
