@@ -1,3 +1,6 @@
 [submodule "app/templates/felayout_t3kit"]
 	path = app/templates/felayout_t3kit
 	url = git@github.com:t3kit/felayout_t3kit.git
+[submodule "app/templates/felayout_ricky"]
+	path = app/templates/felayout_ricky
+	url = git@bitbucket.org:pixelant/felayout_ricky.git
