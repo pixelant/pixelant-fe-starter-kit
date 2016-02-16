@@ -1,6 +1,6 @@
 {
   "name": "generator-fe-kit",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Pixelant Front-End Starter Kit",
   "main": "app/index.js",
   "license": "MIT",
@@ -30,6 +30,7 @@
     "yeoman-generator": "0.22.5"
   },
   "devDependencies": {
+    "semver": "5.1.0",
     "grunt": "0.4.5",
     "grunt-contrib-jshint": "0.12.0",
     "grunt-jscs": "2.7.0",

@@ -1,3 +1,10 @@
+#### v1.0.0 `2016-02-16`
+- **[CHORE]** update felayout_t3kit ([66f20d1](https://github.com/pixelant/pixelant-fe-starter-kit/commit/66f20d1))
+- **[CHORE]** update grunt config ([e77470b](https://github.com/pixelant/pixelant-fe-starter-kit/commit/e77470b))
+- **[FEATURE]** update generator script to use with felayout_t3kit ([6133784](https://github.com/pixelant/pixelant-fe-starter-kit/commit/6133784))
+- **[CHORE]** workflow fixes and updates ([1669e52](https://github.com/pixelant/pixelant-fe-starter-kit/commit/1669e52))
+- **[DOC]** update documentation ([917fbd8](https://github.com/pixelant/pixelant-fe-starter-kit/commit/917fbd8))
+
 #### v0.1.2 `2015-08-04`
 - **[BUGFIX]** fix gitignore issue ([3a4106c](https://github.com/pixelant/pixelant-fe-starter-kit/commit/3a4106c))
 
