@@ -1,10 +1,11 @@
 sudo: false
 language: node_js
 script:
-  - grunt checkjs
+  - grunt check
   - mocha
 node_js:
-  - '0.12'
+  - v4
+  - v5
 before_install:
   - npm install -g grunt-cli
 branches:

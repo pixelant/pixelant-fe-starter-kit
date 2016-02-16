@@ -2,22 +2,21 @@
 
 'use strict';
 var path = require('path');
-var helpers = require('yeoman-generator').test;
-var assert = require('yeoman-generator').assert;
+var helpers = require('yeoman-test');
+var assert = require('yeoman-assert');
 
 describe('fe-kit', function() {
-    describe('felayout', function() {
+    describe('felayout_t3kit', function() {
         before(function(done) {
             helpers.run(path.join(__dirname, '../app'))
             .inDir(path.join(__dirname, '.tmp'))
-            .withOptions({ 'skip-install': true })
             .withPrompts({
-                features: [],
-                projectType: 'felayout_ricky',
+                projectType: 'felayout_t3kit',
                 projectName: 'test',
                 repo: 'Done',
                 hook: 'Done',
                 sshLink: 'skip',
+                installDependencies: false,
                 confirmed: true
             })
             .on('end', done);
@@ -56,15 +55,12 @@ describe('fe-kit', function() {
         it('Adds header to README file', function() {
             assert.fileContent('README.md', 'test');
         });
-        it('adds sshlink to Gruntfile.js', function() {
-            assert.fileContent('Gruntfile.js', 'repo: \'skip\'');
-        });
-        it('adds name to package.json', function() {
+        it('Adds name to package.json', function() {
             assert.fileContent('package.json', '"name": "test"');
         });
-        it('adds version to package.json', function() {
-            assert.fileContent('package.json', '"version": "0.0.1"');
-        });
+        it('Adds sshlink to Gruntfile.js', function() {
+           assert.fileContent('Gruntfile.js', 'var remoteBranch = \'site\'');
+       });
 
     });
 });
