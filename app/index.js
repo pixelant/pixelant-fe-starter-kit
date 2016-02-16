@@ -1,6 +1,7 @@
 var generators = require('yeoman-generator');
 var chalk = require('chalk');
 var updateNotifier = require('update-notifier');
+var ast = require('ast-query');
 
 // Colors
 var warning = chalk.bold.red;
@@ -13,12 +14,13 @@ var inverse = chalk.inverse;
 
 module.exports = generators.Base.extend({
     initializing: function() {
-        this.pkg = require('../package.json');
-        var notifier = updateNotifier({
-            packageName: this.pkg.name,
-            packageVersion: this.pkg.version
+        const pkg = require('../package.json');
+        const notifier = updateNotifier({
+            pkg,
+            updateCheckInterval: 1000
         });
         notifier.notify();
+        console.log(notifier.update);
     },
     prompting: {
         projectType: function() {
@@ -31,18 +33,6 @@ module.exports = generators.Base.extend({
                     message: 'Project type:',
                     choices: [
                         {
-                            name: gray('Big project'),
-                            value: 'big'
-                        },
-                        {
-                            name: gray('Medium project'),
-                            value: 'medium'
-                        },
-                        {
-                            name: gray('Complex project'),
-                            value: 'complex'
-                        },
-                        {
                             name: gray('Static site'),
                             value: 'site'
                         },
@@ -51,8 +41,8 @@ module.exports = generators.Base.extend({
                             value: 'fe'
                         },
                         {
-                            name: 'felayout_ricky',
-                            value: 'felayout_ricky'
+                            name: 'felayout_t3kit',
+                            value: 'felayout_t3kit'
                         }
                     ],
                 },
@@ -65,8 +55,8 @@ module.exports = generators.Base.extend({
             ];
             var promptRecursive = function() {
                 that.prompt(prompts, function(answers) {
-                    if (answers.projectType === 'big' || answers.projectType === 'medium' || answers.projectType === 'complex' || answers.projectType === 'site' || answers.projectType === 'fe') {
-                        that.log(answers.projectType + warning(' under construction. Choose another type.'));
+                    if (answers.projectType === 'site' || answers.projectType === 'fe') {
+                        that.log(answers.projectType + warning(' under construction. Choose another type'));
                         promptRecursive();
                     } else {
                         if (!answers.confirmed) {
@@ -144,30 +134,23 @@ module.exports = generators.Base.extend({
                     return warning('Wrong repository link, try again...');
                 }
             };
+            var installDependencies = {
+                message: 'Install npm/bower dependencies?',
+                name: 'confirmed',
+                type: 'confirm',
+                default: true
+            };
 
             //  ============================================
-            //  felayout_ricky =============================
+            //  felayout_t3kit =============================
             //  ============================================
-            if (this.projectType === 'felayout_ricky') {
+            if (this.projectType === 'felayout_t3kit') {
                 prompts.push(projectName);
                 prompts.push(repo);
                 prompts.push(hook);
                 prompts.push(sshLink);
                 prompts.push(git);
-                prompts.push(confirm);
-            }
-            //  ********************************************
-            //  --------------------------------------------
-
-            //  ============================================
-            //  big ========================================
-            //  ============================================
-            if (this.projectType === 'big') {
-                prompts.push(projectName);
-                prompts.push(repo);
-                prompts.push(hook);
-                prompts.push(sshLink);
-                prompts.push(git);
+                prompts.push(installDependencies);
                 prompts.push(confirm);
             }
             //  ********************************************
@@ -192,43 +175,56 @@ module.exports = generators.Base.extend({
             promptRecursive();
         },
     },
-    // configuring: {
-    // },
-    default: {
-        app: function() {
-            this.directory(this.projectType + '/dev/copyToRoot', 'dev/copyToRoot');
-            this.directory(this.projectType + '/dev/fonts', 'dev/fonts');
-            this.directory(this.projectType + '/dev/images', 'dev/images');
-            this.directory(this.projectType + '/dev/js', 'dev/js');
-            this.directory(this.projectType + '/dev/styles', 'dev/styles');
-            this.directory(this.projectType + '/dev/templates', 'dev/templates');
-            this.bulkDirectory(this.projectType + '/grunt', 'grunt');
-            this.copy(this.projectType + '/.jscsrc', '.jscsrc');
-            this.copy(this.projectType + '/.jshintrc', '.jshintrc');
-            this.copy(this.projectType + '/.htmlhintrc', '.htmlhintrc');
-            this.copy(this.projectType + '/gitignore', '.gitignore');
-            this.copy(this.projectType + '/.gitattributes', '.gitattributes');
-            this.copy(this.projectType + '/.editorconfig', '.editorconfig');
-            this.copy(this.projectType + '/.csslintrc', '.csslintrc');
-            this.copy(this.projectType + '/.bowerrc', '.bowerrc');
-            this.template(this.projectType + '/Gruntfile.js', 'Gruntfile.js');
-            this.template(this.projectType + '/package.json', 'package.json');
-            this.template(this.projectType + '/bower.json', 'bower.json');
-            this.template(this.projectType + '/README.md', 'README.md');
-            if (this.projectType === 'felayout_ricky') {
-                this.directory(this.projectType + '/dev/helpers', 'dev/helpers');
-            }
-            // if (this.projectType === 'big') {
-            // }
+
+    configuring: {
+        parsePackageJson: function() {
+            this.packageJson = this.fs.readJSON(this.templatePath() + '/' + this.projectType + '/package.json');
+            this.packageJsonVersion = this.packageJson.version;
+            this.packageJson.name = this.projectName;
+            this.packageJson.version = '0.0.1';
+            this.packageJson.description = 'Front-End layout for ' + this.projectName + ' project';
+        },
+        parseBowerJson: function() {
+            this.bowerJson = this.fs.readJSON(this.templatePath() + '/' + this.projectType + '/bower.json');
+            this.bowerJson.name = this.projectName;
+        },
+        parseGruntfile: function() {
+            this.readGruntfile = this.fs.read(this.templatePath() + '/' + this.projectType + '/Gruntfile.js');
+            this.gruntfileTree = ast(this.readGruntfile);
+            this.gruntfileTree.var('remoteBranch').value('\'site\'');
+            this.gruntfileTree.var('remoteRepo').value('\'' + this.sshLink + '\'');
         },
 
     },
-    // writing: {
+
+    // default: {
     // },
+
+    writing: function() {
+        this.fs.copy([
+            this.templatePath() + '/' + this.projectType + '/**',
+            this.templatePath() + '/' + this.projectType + '/**/.*',
+            '!**/{Gruntfile.js,bower.json,package.json,.git,README.md}/**'],
+            this.destinationPath()
+        );
+        this.fs.writeJSON(this.destinationPath('package.json'), this.packageJson);
+        this.fs.writeJSON(this.destinationPath('bower.json'), this.bowerJson);
+        this.fs.write(this.destinationPath('Gruntfile.js'), this.gruntfileTree.toString());
+        this.fs.copyTpl(
+            this.templatePath('README.md'),
+            this.destinationPath('README.md'),
+            { projectName: this.projectName,  projectType: this.projectType,  packageVersion: this.packageJsonVersion }
+        );
+        // if (this.projectType === 'felayout_t3kit') {
+        //     this.fs.writeJSON( this.destinationPath('package.json'), this.packageJson);
+        // }
+    },
     install: {
-        npmAndBower: function() {
-            this.npmInstall();
-            this.bowerInstall();
+        installDependencies: function() {
+            if (this.installDependencies) {
+                this.npmInstall();
+                this.bowerInstall();
+            }
         },
         gitInit: function() {
             var that = this;
@@ -247,6 +243,11 @@ module.exports = generators.Base.extend({
     },
     end: {
         endLog: function() {
+            if (!this.installDependencies) {
+                this.log(warning('\nYou need to install npm/bower dependencies manually\n') +
+                    inverse('npm install\n' + 'bower install\n')
+                );
+            }
             if (!this.autoGit) {
                 this.log(warning('\nYou need to initialize new git repo\nand push it to the server manually\n') +
                     inverse('git init\n' +
