@@ -1,6 +1,6 @@
 newrelease:
     - 'prompt:isMaster'
-    - 'prompt:varsion'
+    - 'prompt:version'
     - 'jshint'
     - 'jscs'
     - 'changelog:test'
@@ -10,48 +10,10 @@ newrelease:
     - 'shell:release'
 
 
-checkjs:
+check:
     - 'jshint'
     - 'jscs'
 
 
 testlog:
     - 'changelog:test'
-
-
-# felayout
-felayout:
-    - 'replace:felayoutName'
-    - 'replace:felayoutLink'
-felayoutReverse:
-    - 'replace:felayoutNameReverse'
-    - 'replace:felayoutLinkReverse'
-
-install-felayout:
-    - 'felayout'
-    - 'shell:installFElayout'
-    - 'felayoutReverse'
-#=======
-
-
-# big
-big:
-    - 'replace:bigName'
-    - 'replace:bigLink'
-bigReverse:
-    - 'replace:bigNameReverse'
-    - 'replace:bigLinkReverse'
-install-big:
-    - 'big'
-    - 'shell:installBig'
-    - 'bigReverse'
-#=======
-
-
-reverse:
-    - 'bigReverse'
-    - 'felayoutReverse'
-
-install-all:
-    - 'install-felayout'
-    - 'install-big'

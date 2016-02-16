@@ -31,7 +31,7 @@ module.exports = {
             ]
         }
     },
-    varsion: {
+    version: {
         options: {
             questions: [
                 {

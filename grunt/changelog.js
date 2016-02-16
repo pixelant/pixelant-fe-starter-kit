@@ -3,7 +3,7 @@ module.exports = {
         options: {
             version: null,
             changelog: 'CHANGELOG.md',
-            labels: ['[FEATURE]', '[BUGFIX]', '[DOC]', '[STYLE]', '[CHORE]', '[TEST]', '[CLEANUP]'],
+            labels: ['[FEATURE]', '[FIX]', '[DOC]', '[STYLE]', '[CHORE]', '[TEST]', '[CLEANUP]'],
             template: {
                 file: 'changelog.tpl',
             },
@@ -14,7 +14,7 @@ module.exports = {
         options: {
             version: null,
             changelog: 'CHANGELOG.md',
-            labels: ['[FEATURE]', '[BUGFIX]', '[DOC]', '[STYLE]', '[CHORE]', '[TEST]', '[CLEANUP]'],
+            labels: ['[FEATURE]', '[FIX]', '[DOC]', '[STYLE]', '[CHORE]', '[TEST]', '[CLEANUP]'],
             template: {
                 file: 'changelog.tpl',
             },
@@ -26,7 +26,7 @@ module.exports = {
 // Labels INFO
 
 // [FEATURE]: A new feature
-// [BUGFIX]: A bug fix (bug fixes)
+// [FIX]: A bug fix (bug fixes)
 // [DOC]: Documentation only changes
 // [STYLE]: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 // [TEST]: Adding missing tests
