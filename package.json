@@ -4,7 +4,7 @@
   "description": "Pixelant Front-End Starter Kit",
   "main": "app/index.js",
   "license": "MIT",
-  "repository": "https://github.com/pixelant/pixelant-fe-starter-kit",
+  "repository": "pixelant/pixelant-fe-starter-kit",
   "author": "Pixelant",
   "files": [
     "app"
@@ -17,29 +17,29 @@
     "starter-kit",
     "fe-kit",
     "typo3",
+    "t3kit",
+    "felayout",
     "grunt"
   ],
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
-    "chalk": "1.0.0",
-    "semver": "4.3.6",
-    "yeoman-generator": "0.20.1",
-    "update-notifier": "0.5.0"
+    "chalk": "1.1.1",
+    "update-notifier": "0.6.0",
+    "yeoman-generator": "0.22.5"
   },
   "devDependencies": {
     "grunt": "0.4.5",
-    "grunt-contrib-jshint": "0.11.2",
-    "grunt-jscs": "1.8.0",
-    "grunt-prompt": "1.3.0",
-    "grunt-release": "0.12.0",
+    "grunt-contrib-jshint": "0.12.0",
+    "grunt-jscs": "2.7.0",
+    "grunt-prompt": "1.3.3",
+    "grunt-release": "0.13.0",
     "grunt-shell": "1.1.2",
     "grunt-templated-changelog": "0.1.3",
-    "grunt-text-replace": "0.4.0",
-    "jshint-stylish": "2.0.0",
-    "load-grunt-config": "0.17.1",
-    "time-grunt": "1.2.1",
-    "mocha": "2.2.5"
+    "jshint-stylish": "2.1.0",
+    "load-grunt-config": "0.19.1",
+    "time-grunt": "1.3.0",
+    "mocha": "2.4.5"
   }
 }
