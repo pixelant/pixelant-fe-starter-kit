@@ -4,7 +4,6 @@ script:
   - grunt check
   - mocha
 node_js:
-  - v4
   - v5
 before_install:
   - npm install -g grunt-cli

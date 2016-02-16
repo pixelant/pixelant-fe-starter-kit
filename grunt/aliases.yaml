@@ -1,4 +1,4 @@
-newrelease:
+newRelease:
     - 'prompt:isMaster'
     - 'prompt:version'
     - 'jshint'

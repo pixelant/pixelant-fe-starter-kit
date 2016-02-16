@@ -8,8 +8,14 @@ module.exports = {
             questions: [
                 {
                     config: 'ask',
-                    type: 'confirm',
-                    message: 'Looks good?'
+                    type: 'imput',
+                    message: 'Looks good?',
+                    validate: function(value) {
+                        if (value === 'yes' || value === 'y') {
+                            return true;
+                        }
+                        return chalk.bold.red('Use ctrl+C to exit');
+                    }
                 },
             ]
         }
