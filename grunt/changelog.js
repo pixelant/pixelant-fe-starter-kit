@@ -3,7 +3,7 @@ module.exports = {
         options: {
             version: null,
             changelog: 'CHANGELOG.md',
-            labels: ['[FEATURE]', '[FIX]', '[REFACTOR]', '[PERF]', '[DOC]', '[STYLE]', '[CHORE]', '[TEST]'],
+            labels: ['[FEATURE]', '[FIX]', '[REFACTOR]', '[PERF]', '[DOC]', '[STYLE]', '[CHORE]', '[UPDATE]', '[TEST]'],
             template: {
                 file: 'changelog.tpl',
             },
@@ -23,7 +23,7 @@ module.exports = {
         options: {
             version: null,
             changelog: 'CHANGELOG.md',
-            labels: ['[FEATURE]', '[FIX]', '[REFACTOR]', '[PERF]', '[DOC]', '[STYLE]', '[CHORE]', '[TEST]'],
+            labels: ['[FEATURE]', '[FIX]', '[REFACTOR]', '[PERF]', '[DOC]', '[STYLE]', '[CHORE]', '[UPDATE]', '[TEST]'],
             template: {
                 file: 'changelog.tpl',
             },
