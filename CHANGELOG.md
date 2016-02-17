@@ -1,3 +1,8 @@
+#### v1.0.3 `2016-02-17`
+- **[CHORE]**  update changelog script -> add new prefix UPDATE ([eb491c2](https://github.com/pixelant/pixelant-fe-starter-kit/commit/eb491c2))
+- **[FIX]**  fix .gitignore bug in npm repo ([b050ed4](https://github.com/pixelant/pixelant-fe-starter-kit/commit/b050ed4))
+- **[DOC]**  fix links in README file ([58bf5bf](https://github.com/pixelant/pixelant-fe-starter-kit/commit/58bf5bf))
+
 #### v1.0.2 `2016-02-17`
 - **[CHORE]**  changelog fixes ([7d109ca](https://github.com/pixelant/pixelant-fe-starter-kit/commit/7d109ca))
 - **[FIX]**  fix install npm/bower dependencies prompt ([6359ff6](https://github.com/pixelant/pixelant-fe-starter-kit/commit/6359ff6))
