@@ -1,3 +1,6 @@
+#### v1.0.4 `2016-02-17`
+- **[FIX]**  extend ignored files list ([2cd9012](https://github.com/pixelant/pixelant-fe-starter-kit/commit/2cd9012))
+
 #### v1.0.3 `2016-02-17`
 - **[CHORE]**  update changelog script -> add new prefix UPDATE ([eb491c2](https://github.com/pixelant/pixelant-fe-starter-kit/commit/eb491c2))
 - **[FIX]**  fix .gitignore bug in npm repo ([b050ed4](https://github.com/pixelant/pixelant-fe-starter-kit/commit/b050ed4))
