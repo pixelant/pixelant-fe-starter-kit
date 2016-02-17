@@ -239,7 +239,7 @@ module.exports = generators.Base.extend({
     },
     end: {
         endLog: function() {
-            if (!this.installDependencies) {
+            if (!this.npmBower) {
                 this.log(warning('\nYou need to install npm/bower dependencies manually\n') +
                     inverse('npm install\n' + 'bower install\n')
                 );
