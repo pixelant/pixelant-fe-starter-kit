@@ -1,7 +1,6 @@
 # Pixelant Front-End Starter Kit
 ### `generator-fe-kit`
 
-[![GitHub version](https://badge.fury.io/gh/pixelant%2Fpixelant-fe-starter-kit.svg)](http://badge.fury.io/gh/pixelant%2Fpixelant-fe-starter-kit)
 [![npm version](https://badge.fury.io/js/generator-fe-kit.svg)](https://badge.fury.io/js/generator-fe-kit)
 [![Build Status](https://travis-ci.org/pixelant/pixelant-fe-starter-kit.svg?branch=master)](https://travis-ci.org/pixelant/pixelant-fe-starter-kit)
 
@@ -69,7 +68,7 @@ Everyone can add feedback, bug reports and fixes. Here is several rules for cont
 
 If you have a question(feature) not covered in the documentation or want to report a bug, the best way to ensure it gets addressed is to file it in the appropriate issues tracker. Please check that you've completed the following steps:
 
-* Make sure you're on the right version of [dependencies](https://github.com/pixelant/pixelant-fe-starter-kit/readme.md#required-dependencies)
+* Make sure you're on the right version of [dependencies](#required-dependencies)
 * Make sure you're on the latest version of generator npm update -g generator-fe-kit
 * Used the search feature to ensure that the bug hasn't been reported before
 Included as much information about the bug as possible, including any output you've received, what OS and version you're on, etc.
@@ -81,8 +80,8 @@ Included as much information about the bug as possible, including any output you
 * Please check to make sure that there aren't existing pull requests attempting to address the issue mentioned. We also recommend checking for issues related to the issue on the tracker, as a team member may be working on the issue in a branch or fork.
 * Non-trivial changes should be discussed in an issue first
 * Develop in a topic branch, not master
-* Follow [Style Guides](https://github.com/pixelant/pixelant-fe-starter-kit/readme.md#style-guide)
-* Follow [Git commit conventions](https://github.com/pixelant/pixelant-fe-starter-kit/blob/master/readme.md#git-commit-conventions-and-output-formatting)
+* Follow [Style Guides](#style-guide)
+* Follow [Git commit conventions](#git-commit-conventions-and-output-formatting)
 * Write a convincing description of your PR and why we should land it
 
 
@@ -111,6 +110,7 @@ Please use semantic labels for your messages, but if commit message is not very 
 * [DOC] Documentation only changes
 * [STYLE] Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 * [TEST] Adding missing tests
+* [UPDATE] Updating git submodules
 
 Please ensure any pull requests of fixes **follow this closely**. If you notice existing code which doesn't follow these practices, feel free to shout and we will address this.
 ***
