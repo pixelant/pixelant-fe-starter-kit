@@ -1,3 +1,6 @@
+#### v1.0.1 `2016-02-17`
+- **[DOC]** update documentation ([5fc314e](https://github.com/pixelant/pixelant-fe-starter-kit/commit/5fc314e))
+
 #### v1.0.0 `2016-02-16`
 - **[CHORE]** update felayout_t3kit ([66f20d1](https://github.com/pixelant/pixelant-fe-starter-kit/commit/66f20d1))
 - **[CHORE]** update grunt config ([e77470b](https://github.com/pixelant/pixelant-fe-starter-kit/commit/e77470b))
