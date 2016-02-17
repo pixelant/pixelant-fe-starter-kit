@@ -211,6 +211,21 @@ module.exports = generators.Base.extend({
             this.destinationPath('README.md'),
             { projectName: this.projectName,  projectType: this.projectType,  packageVersion: this.packageJsonVersion }
         );
+
+        // Handle bug where npm has renamed .gitignore to .npmignore
+        // https://github.com/npm/npm/issues/3763
+        if (this.fs.exists(this.templatePath() + '/' + this.projectType + '/.npmignore')) {
+            this.fs.copy(
+                this.templatePath() + '/' + this.projectType + '/.npmignore',
+                this.destinationPath('.gitignore')
+            );
+        } else {
+            this.fs.copy(
+                this.templatePath() + '/' + this.projectType + '/.gitignore',
+                this.destinationPath('.gitignore')
+            );
+        }
+
         // if (this.projectType === 'felayout_t3kit') {
         //     this.fs.writeJSON( this.destinationPath('package.json'), this.packageJson);
         // }
