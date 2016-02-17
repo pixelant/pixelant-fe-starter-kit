@@ -11,12 +11,25 @@
 - [Grunt-cli](http://gruntjs.com/) >=0.1.13 `npm install -g grunt-cli`
 
 
+### Installation:
+
+First, clone repo:
+```bash
+git clone repoLink
+```
+
+Next, install Bower/NPM dependencies:
+```bash
+npm install
+bower install
+```
+
 ### Getting Started:
 
 - Run `grunt` to start static server with livereload `localhost:9004`
 - Run `grunt small` to start static server [_same as `grunt`_] plus it generates files for **SMALL** project in folder `small`
 - Run `grunt big` to start static server [_same as `grunt`_] plus it generates files for **BIG** project in folder `big`
 - Run `grunt check` to check HTML/CSS/JS files according project code conventions
-- Run `grunt pushSite` to build your static site and push it to separate branch `site`
+- Run `grunt pushSite` to compile static site and push it to separate branch `site`
 - Run `grunt pushBig` to compile files for **BIG** project and push it to separate branch `big`
 - Run `grunt pushSmall` to compile files for **SMALL** project and push it to separate branch `small`

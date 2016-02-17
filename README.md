@@ -8,7 +8,6 @@
 
 ### [CHANGELOG](https://github.com/pixelant/pixelant-fe-starter-kit/blob/master/CHANGELOG.md)
 
-### Required dependencies:
 
 ### Required dependencies:
 
@@ -19,6 +18,7 @@
 - [Grunt-cli](http://gruntjs.com/) >=0.1.13 `npm install -g grunt-cli`
 - [Yeoman](http://yeoman.io/) >=1.6.0 `npm install -g yo`
 
+_Note: You might need to use `sudo` before `npm` command to install packages globally_
 ***
 
 ### Getting started with Pixelant Front-End Starter Kit
@@ -47,7 +47,7 @@ yo fe-kit
   * Front-End workflow _(experimental, AngularJS, React, Meteor, Mobile apps, etc...)_
   * felayout_t3kit _(Front-End layout for **t3kit** project)_
 * Enter name of project
-* Create repository in bitbucket
+* Create repository on remote server
 * Add repo link from created repository
 * Initialize git repository
 * Install dependencies
@@ -80,7 +80,7 @@ Included as much information about the bug as possible, including any output you
 * Please check to make sure that there aren't existing pull requests attempting to address the issue mentioned. We also recommend checking for issues related to the issue on the tracker, as a team member may be working on the issue in a branch or fork.
 * Non-trivial changes should be discussed in an issue first
 * Develop in a topic branch, not master
-* Follow [Style Guides](#style-guide)
+* Follow [Style Guides](#style-guides)
 * Follow [Git commit conventions](#git-commit-conventions-and-output-formatting)
 * Write a convincing description of your PR and why we should land it
 
@@ -99,20 +99,19 @@ Please ensure any pull requests of fixes **follow this closely**. If you notice 
 
 
 ## Git commit conventions and output formatting
-Please use semantic labels for your messages, but if commit message is not very important, you can skip labels. All commits with labels will be added in changelog, that's why it is important to use labels on your commits.
+Please use semantic labels for your messages, but if commit message is not very important, you can skip labels. All commits with labels will be added in changelog, that's why it is **important to use predefined labels** on your commits.
 
 ####Git labels:
-* [FEATURE] A new feature
-* [FIX] A bug fix
-* [REFACTOR] A code change that neither fixes a bug or adds a feature
-* [PERF] A code change that improves performance.
-* [CHORE] Changes to the build process (grunt) or auxiliary tools and libraries such as documentation generation and linters (jshint, etc.)
-* [DOC] Documentation only changes
-* [STYLE] Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* [TEST] Adding missing tests
-* [UPDATE] Updating git submodules
+* **[FEATURE]** A new feature
+* **[FIX]** A bug fix
+* **[REFACTOR]** A code change that neither fixes a bug or adds a feature
+* **[PERF]** A code change that improves performance.
+* **[CHORE]** Changes to the build process (grunt) or auxiliary tools and libraries such as documentation generation and linters (jshint, jscs, etc.)
+* **[DOC]** Documentation only changes
+* **[STYLE]** Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+* **[TEST]** Adding missing tests
+* **[UPDATE]** Updating git submodules
 
-Please ensure any pull requests of fixes **follow this closely**. If you notice existing code which doesn't follow these practices, feel free to shout and we will address this.
 ***
 
 ![Pixelant](https://raw.githubusercontent.com/dmh/img/master/P.png)
