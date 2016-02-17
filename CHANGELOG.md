@@ -1,3 +1,8 @@
+#### v1.0.2 `2016-02-17`
+- **[CHORE]**  changelog fixes ([7d109ca](https://github.com/pixelant/pixelant-fe-starter-kit/commit/7d109ca))
+- **[FIX]**  fix install npm/bower dependencies prompt ([6359ff6](https://github.com/pixelant/pixelant-fe-starter-kit/commit/6359ff6))
+- **[DOC]**  update documentation ([9c5ee50](https://github.com/pixelant/pixelant-fe-starter-kit/commit/9c5ee50))
+
 #### v1.0.1 `2016-02-17`
 - **[DOC]** update documentation ([5fc314e](https://github.com/pixelant/pixelant-fe-starter-kit/commit/5fc314e))
 
