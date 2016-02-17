@@ -15,12 +15,8 @@ var inverse = chalk.inverse;
 module.exports = generators.Base.extend({
     initializing: function() {
         const pkg = require('../package.json');
-        const notifier = updateNotifier({
-            pkg,
-            updateCheckInterval: 1000
-        });
+        const notifier = updateNotifier({pkg});
         notifier.notify();
-        console.log(notifier.update);
     },
     prompting: {
         projectType: function() {

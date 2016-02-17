@@ -1,8 +1,9 @@
 # Pixelant Front-End Starter Kit
+### `generator-fe-kit`
 
 [![GitHub version](https://badge.fury.io/gh/pixelant%2Fpixelant-fe-starter-kit.svg)](http://badge.fury.io/gh/pixelant%2Fpixelant-fe-starter-kit)
+[![npm version](https://badge.fury.io/js/generator-fe-kit.svg)](https://badge.fury.io/js/generator-fe-kit)
 [![Build Status](https://travis-ci.org/pixelant/pixelant-fe-starter-kit.svg?branch=master)](https://travis-ci.org/pixelant/pixelant-fe-starter-kit)
-[![npm](https://img.shields.io/npm/dm/generator-fe-kit.svg)](https://www.npmjs.com/package/generator-fe-kit)
 
 ![fe-kit](https://raw.githubusercontent.com/dmh/img/master/fe-kit.jpg)
 
@@ -10,13 +11,14 @@
 
 ### Required dependencies:
 
-* Git
-* [NodeJs](http://nodejs.org/)
-    - **Node Version >=0.12.2**
-    - **NPM Version >=2.11.0**
-* [Bower](http://bower.io/) `npm install -g bower` **Version >=1.4.1**
-* [Grunt-cli](http://gruntjs.com/) `npm install -g grunt-cli` **Version >=0.1.13**
-* [Yeoman](http://yeoman.io/) `npm install -g yo` **Version >=1.4.7**
+### Required dependencies:
+
+- [Git](https://git-scm.com/)
+- [NodeJs](http://nodejs.org/) >=5.6.0
+- [NPM](https://github.com/npm/npm) >=3.7.0
+- [Bower](http://bower.io/) >=1.7.7 `npm install -g bower`
+- [Grunt-cli](http://gruntjs.com/) >=0.1.13 `npm install -g grunt-cli`
+- [Yeoman](http://yeoman.io/) >=1.6.0 `npm install -g yo`
 
 ***
 
@@ -42,16 +44,14 @@ yo fe-kit
 ```
 
 * Next you will get questions and instructions in terminal. Need to choose type of project
-  * Big project _(for big projects)_
-  * Medium project _(for medium projects ex-felayout_ricky)_
-  * Complex project _(TBD...)_
   * Static site _(static sites, promo sites, one page applications)_
   * Front-End workflow _(experimental, AngularJS, React, Meteor, Mobile apps, etc...)_
-  * felayout_ricky _(old Front-End patterns)_
+  * felayout_t3kit _(Front-End layout for **t3kit** project)_
 * Enter name of project
 * Create repository in bitbucket
-* Add ssh link from created repository
-* etc... (depend on type of project)
+* Add repo link from created repository
+* Initialize git repository
+* Install dependencies
 
 ![fe-kit](https://raw.githubusercontent.com/dmh/img/master/fe-kit.gif)
 
@@ -85,15 +85,9 @@ Included as much information about the bug as possible, including any output you
 * Write a convincing description of your PR and why we should land it
 
 
-## Internal Fixes (Pixelant team)
-
-If you want to fix bug by yourself or add new features, you have to use steps listed below.
-
-* TBD...
-
 
 ## Style Guides
-This project uses special rules and style guides. Those rules you can find on appropriate files: `.jscsrc .jshintrc .htmlhintrc .csslintrc .editorconfig` 
+This project uses special rules and style guides. Those rules you can find on appropriate files: `.jscsrc .jshintrc .htmlhintrc .csslintrc .editorconfig`
 
 * [htmlhint](https://github.com/yaniswang/HTMLHint/wiki/Rules)
 * [jscs](http://jscs.info/rules.html)
@@ -105,6 +99,6 @@ Please ensure any pull requests of fixes follow this closely. If you notice exis
 
 ***
 
-![Pixelant](https://raw.githubusercontent.com/dmh/img/master/P.png)
+![Pixelant](http://raw.githubusercontent.com/dmh/img/master/P.png)
 
 [Pixelant](http://www.pixelant.se/)
