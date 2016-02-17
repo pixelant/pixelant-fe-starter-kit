@@ -15,7 +15,7 @@ var inverse = chalk.inverse;
 module.exports = generators.Base.extend({
     initializing: function() {
         const pkg = require('../package.json');
-        const notifier = updateNotifier({pkg});
+        const notifier = updateNotifier({ pkg });
         notifier.notify();
     },
     prompting: {
@@ -132,7 +132,7 @@ module.exports = generators.Base.extend({
             };
             var installDependencies = {
                 message: 'Install npm/bower dependencies?',
-                name: 'confirmed',
+                name: 'npmBower',
                 type: 'confirm',
                 default: true
             };
@@ -217,7 +217,7 @@ module.exports = generators.Base.extend({
     },
     install: {
         installDependencies: function() {
-            if (this.installDependencies) {
+            if (this.npmBower) {
                 this.npmInstall();
                 this.bowerInstall();
             }
