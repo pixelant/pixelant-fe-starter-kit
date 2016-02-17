@@ -200,7 +200,7 @@ module.exports = generators.Base.extend({
         this.fs.copy([
             this.templatePath() + '/' + this.projectType + '/**',
             this.templatePath() + '/' + this.projectType + '/**/.*',
-            '!**/{Gruntfile.js,bower.json,package.json,.git,README.md}/**'],
+            '!**/{Gruntfile.js, bower.json,package.json,.git,.npmignore,.gitignore,wct.conf.js,docs,test,README.md}/**'],
             this.destinationPath()
         );
         this.fs.writeJSON(this.destinationPath('package.json'), this.packageJson);
