@@ -13,7 +13,7 @@
 
 - [Git](https://git-scm.com/)
 - [NodeJs](http://nodejs.org/) >=5.6.0
-- [NPM](https://github.com/npm/npm) >=3.7.0
+- [NPM](https://github.com/npm/npm) >=3.6.0
 - [Bower](http://bower.io/) >=1.7.7 `npm install -g bower`
 - [Grunt-cli](http://gruntjs.com/) >=0.1.13 `npm install -g grunt-cli`
 - [Yeoman](http://yeoman.io/) >=1.6.0 `npm install -g yo`
@@ -110,7 +110,7 @@ Please use semantic labels for your messages, but if commit message is not very 
 * **[DOC]** Documentation only changes
 * **[STYLE]** Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 * **[TEST]** Adding missing tests
-* **[UPDATE]** Updating git submodules
+* **[UPDATE]** Updating git submodules, npm/bower dependencies
 
 ***
 
