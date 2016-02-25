@@ -1,3 +1,8 @@
+#### v1.0.5 `2016-02-25`
+- **[UPDATE]**  felayout_t3kit (fixing bugs) ([124006f](https://github.com/pixelant/pixelant-fe-starter-kit/commit/124006f))
+- **[DOC]**  small updates to README file ([890ef4e](https://github.com/pixelant/pixelant-fe-starter-kit/commit/890ef4e))
+- **[DOC]**  update README files ([b5ea0b6](https://github.com/pixelant/pixelant-fe-starter-kit/commit/b5ea0b6))
+
 #### v1.0.4 `2016-02-17`
 - **[FIX]**  extend ignored files list ([2cd9012](https://github.com/pixelant/pixelant-fe-starter-kit/commit/2cd9012))
 
