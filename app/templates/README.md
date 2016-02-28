@@ -27,9 +27,9 @@ bower install
 ### Getting Started:
 
 - Run `grunt` to start static server with livereload `localhost:9004`
-- Run `grunt small` to start static server [_same as `grunt`_] plus it generates files for **SMALL** project in folder `small`
-- Run `grunt big` to start static server [_same as `grunt`_] plus it generates files for **BIG** project in folder `big`
+- Run `grunt +less` to start static server [_same as `grunt`_] plus it generates all Front-End service files plus **LESS** styling for CMS needs, and copy it to `less` folder. _[with livereload]_
+- Run `grunt +css` to start static server [_same as `grunt`_] plus it generates all Front-End service files plus **CSS** styling for CMS needs, and copy it to `css` folder. _[with livereload]_
 - Run `grunt check` to check HTML/CSS/JS files according project code conventions
-- Run `grunt pushSite` to compile static site and push it to separate branch `site`
-- Run `grunt pushBig` to compile files for **BIG** project and push it to separate branch `big`
-- Run `grunt pushSmall` to compile files for **SMALL** project and push it to separate branch `small`
+- Run `grunt pushSite` to build your static site and push it to separate branch `site`
+- Run `grunt pushCss` to compile all Front-End service files plus **CSS** styling for CMS needs, copy it to separate branch `css` and push to remote git server.
+- Run `grunt pushLess` to compile all Front-End service files plus **LESS** styling for CMS needs, copy it to separate branch `less` and push to remote git server.
