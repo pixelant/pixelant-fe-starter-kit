@@ -1,6 +1,6 @@
 {
   "name": "generator-fe-kit",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Pixelant Front-End Starter Kit",
   "main": "app/index.js",
   "license": "MIT",

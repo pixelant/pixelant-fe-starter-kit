@@ -1,3 +1,7 @@
+#### v1.0.7 `2016-03-15`
+- **[UPDATE]**  update felayout_t3kit ([6b44ea7](https://github.com/pixelant/pixelant-fe-starter-kit/commit/6b44ea7))
+- **[CHORE]**  add update-notifier config ([16cc4e3](https://github.com/pixelant/pixelant-fe-starter-kit/commit/16cc4e3))
+
 #### v1.0.6 `2016-02-28`
 - **[UPDATE]**  update felayout_t3kit ([c203a79](https://github.com/pixelant/pixelant-fe-starter-kit/commit/c203a79))
 - **[DOC]**  update README file ([6960a66](https://github.com/pixelant/pixelant-fe-starter-kit/commit/6960a66))
