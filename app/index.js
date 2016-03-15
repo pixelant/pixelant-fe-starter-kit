@@ -2,6 +2,7 @@ var generators = require('yeoman-generator');
 var chalk = require('chalk');
 var updateNotifier = require('update-notifier');
 var ast = require('ast-query');
+const boxen = require('boxen');
 
 // Colors
 var warning = chalk.bold.red;
@@ -15,9 +16,37 @@ var inverse = chalk.inverse;
 module.exports = generators.Base.extend({
     initializing: function() {
         const pkg = require('../package.json');
-        const notifier = updateNotifier({ pkg });
-        notifier.notify();
+        const notifier = updateNotifier({
+            pkg,
+            updateCheckInterval: 0
+        });
+        var generatorNameMessage = boxen(gray('Pixelant Front-End Starter Kit (' + notifier.packageName + ')'), {
+            padding: { top: 0, right: 2, bottom: 0, left: 2 },
+            margin:{ top: 0, right: 0, bottom: 0, left: 0 },
+            borderColor: 'black',
+            borderStyle: 'round'
+        });
+        var noUpdatesMessage = boxen('You are using actual version of generator' + '\n' + success('Feel free to install and use any type of project'), {
+            padding: { top: 0, right: 2, bottom: 0, left: 2 },
+            margin:{ top: 0, right: 0, bottom: 1, left: 0 },
+            borderColor: 'green',
+            borderStyle: 'round'
+        });
+        if (notifier.update) {
+            var needToUpdateMessage = boxen(warning('Need to update before continuing!') + '\n' + 'Update available ' + gray(notifier.update.current) + ' → ' + magenta(notifier.update.latest) + ' \nRun ' + success('npm i -g ' + notifier.packageName) + ' to update', {
+                padding: { top: 0, right: 2, bottom: 0, left: 2 },
+                margin:{ top: 0, right: 0, bottom: 1, left: 0 },
+                borderColor: 'red',
+                borderStyle: 'round'
+            });
+            console.log(generatorNameMessage);
+            console.log(needToUpdateMessage);
+        } else {
+            console.log(generatorNameMessage);
+            console.log(noUpdatesMessage);
+        }
     },
+
     prompting: {
         projectType: function() {
             var done = this.async();
