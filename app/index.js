@@ -15,35 +15,52 @@ var inverse = chalk.inverse;
 
 module.exports = generators.Base.extend({
     initializing: function() {
-        const pkg = require('../package.json');
-        const notifier = updateNotifier({
-            pkg,
-            updateCheckInterval: 0
-        });
-        var generatorNameMessage = boxen(gray('Pixelant Front-End Starter Kit (' + notifier.packageName + ')'), {
-            padding: { top: 0, right: 2, bottom: 0, left: 2 },
-            margin:{ top: 0, right: 0, bottom: 0, left: 0 },
-            borderColor: 'black',
-            borderStyle: 'round'
-        });
-        var noUpdatesMessage = boxen('You are using actual version of generator' + '\n' + success('Feel free to install and use any type of project'), {
-            padding: { top: 0, right: 2, bottom: 0, left: 2 },
-            margin:{ top: 0, right: 0, bottom: 1, left: 0 },
-            borderColor: 'green',
-            borderStyle: 'round'
-        });
-        if (notifier.update) {
-            var needToUpdateMessage = boxen(warning('Need to update before continuing!') + '\n' + 'Update available ' + gray(notifier.update.current) + ' → ' + magenta(notifier.update.latest) + ' \nRun ' + success('npm i -g ' + notifier.packageName) + ' to update', {
-                padding: { top: 0, right: 2, bottom: 0, left: 2 },
-                margin:{ top: 0, right: 0, bottom: 1, left: 0 },
-                borderColor: 'red',
-                borderStyle: 'round'
+        if (process.argv.indexOf('--no-check-updates') === -1) {
+            var done = this.async();
+            const pkg = require('../package.json');
+            const notifier = updateNotifier({
+                pkg,
+                updateCheckInterval: 0,
+                callback: function(err, update) {
+                    if (err) {
+                        var networkError = boxen(warning('Network error!') + '\n' + 'Might be problems with internet connection or npm remote repo' + '\nRun ' + success('yo fe-kit --no-check-updates') + ' to skip update checking' + '\n' + 'Only if you are sure that you already have latest version.', {
+                            padding: { top: 0, right: 2, bottom: 0, left: 2 },
+                            margin:{ top: 0, right: 0, bottom: 1, left: 0 },
+                            borderColor: 'red',
+                            borderStyle: 'round'
+                        });
+                        console.log(networkError);
+                        console.log(err);
+                    } else {
+                        var generatorNameMessage = boxen(gray('Pixelant Front-End Starter Kit (' + notifier.packageName + ')'), {
+                            padding: { top: 0, right: 2, bottom: 0, left: 2 },
+                            margin:{ top: 0, right: 0, bottom: 0, left: 0 },
+                            borderColor: 'black',
+                            borderStyle: 'round'
+                        });
+                        var noUpdatesMessage = boxen('You are using actual version of generator' + '\n' + success('Feel free to install and use any type of project'), {
+                            padding: { top: 0, right: 2, bottom: 0, left: 2 },
+                            margin:{ top: 0, right: 0, bottom: 1, left: 0 },
+                            borderColor: 'green',
+                            borderStyle: 'round'
+                        });
+                        if (update.latest !== update.current) {
+                            var needToUpdateMessage = boxen(warning('Need to update before continuing!') + '\n' + 'Update available ' + gray(update.current) + ' → ' + magenta(update.latest) + ' \nRun ' + success('npm i -g ' + notifier.packageName) + ' to update', {
+                                padding: { top: 0, right: 2, bottom: 0, left: 2 },
+                                margin:{ top: 0, right: 0, bottom: 1, left: 0 },
+                                borderColor: 'red',
+                                borderStyle: 'round'
+                            });
+                            console.log(generatorNameMessage);
+                            console.log(needToUpdateMessage);
+                        } else {
+                            console.log(generatorNameMessage);
+                            console.log(noUpdatesMessage);
+                        }
+                        done();
+                    }
+                }
             });
-            console.log(generatorNameMessage);
-            console.log(needToUpdateMessage);
-        } else {
-            console.log(generatorNameMessage);
-            console.log(noUpdatesMessage);
         }
     },
 
