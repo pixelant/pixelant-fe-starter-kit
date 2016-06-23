@@ -1,3 +1,8 @@
+
+#### v1.4.0 `June 23, 2016`
+- **[UPDATE]** felayout_t3kit 1.3.0 ([5ec2943](https://github.com/pixelant/pixelant-fe-starter-kit/commit/5ec2943))
+
+***
 #### v1.3.0 `June 2, 2016`
 - **[UPDATE]** felayout_t3kit 1.2.0 ([63cb460](https://github.com/pixelant/pixelant-fe-starter-kit/commit/63cb460))
 
