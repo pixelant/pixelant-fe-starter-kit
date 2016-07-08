@@ -1,4 +1,10 @@
 
+#### v1.5.0 `July 8, 2016`
+- **[UPDATE]** felayout_t3kit 1.4.0 ([cb68506](https://github.com/pixelant/pixelant-fe-starter-kit/commit/cb68506))
+- **[DOC]** add license file (Podio feature_24) ([3cdae3e](https://github.com/pixelant/pixelant-fe-starter-kit/commit/3cdae3e))
+
+***
+
 #### v1.4.0 `June 23, 2016`
 - **[UPDATE]** felayout_t3kit 1.3.0 ([5ec2943](https://github.com/pixelant/pixelant-fe-starter-kit/commit/5ec2943))
 
