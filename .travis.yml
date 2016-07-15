@@ -1,12 +1,10 @@
 sudo: false
 language: node_js
 script:
-  - grunt check
+  - npm run check
   - mocha
 node_js:
-  - v5
-before_install:
-  - npm install -g grunt-cli
+  - v6
 branches:
   only:
     - master
