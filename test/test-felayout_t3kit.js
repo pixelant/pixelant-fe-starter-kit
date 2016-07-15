@@ -59,8 +59,8 @@ describe('fe-kit', function() {
             assert.fileContent('package.json', '"name": "test"');
         });
         it('Adds sshlink to Gruntfile.js', function() {
-           assert.fileContent('Gruntfile.js', 'var remoteBranch = \'site\'');
-       });
+            assert.fileContent('Gruntfile.js', 'var remoteBranch = \'site\'');
+        });
 
     });
 });

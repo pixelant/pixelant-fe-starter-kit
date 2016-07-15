@@ -4,9 +4,6 @@ module.exports = function(grunt) {
         // data: {},
         jitGrunt: {
             jitGrunt: true,
-            staticMappings: {
-                changelog: 'grunt-templated-changelog'
-            }
         }
     });
 };
