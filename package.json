@@ -22,7 +22,8 @@
     "grunt"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "check": "grunt check"
   },
   "dependencies": {
     "boxen": "0.5.0",
@@ -43,5 +44,9 @@
     "load-grunt-config": "0.19.1",
     "time-grunt": "1.3.0",
     "mocha": "2.4.5"
+  },
+    "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=3.9.0"
   }
 }

@@ -8,12 +8,11 @@
 
 ### [CHANGELOG](https://github.com/pixelant/pixelant-fe-starter-kit/blob/master/CHANGELOG.md)
 
-
 ### Required dependencies:
 
 - [Git](https://git-scm.com/)
-- [NodeJs](http://nodejs.org/) >=5.6.0
-- [NPM](https://github.com/npm/npm) >=3.6.0
+- [NodeJs](http://nodejs.org/) >=6.0.0
+- [NPM](https://github.com/npm/npm) >=3.9.0
 - [Bower](http://bower.io/) >=1.7.7 `npm install -g bower`
 - [Grunt-cli](http://gruntjs.com/) >=0.1.13 `npm install -g grunt-cli`
 - [Yeoman](http://yeoman.io/) >=1.6.0 `npm install -g yo`
