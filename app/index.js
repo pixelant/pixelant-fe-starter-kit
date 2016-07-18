@@ -8,7 +8,7 @@ const boxen = require('boxen');
 var warning = chalk.bold.red;
 var success = chalk.bold.green;
 var yellow = chalk.bold.yellow;
-var blue = chalk.blue;
+// var blue = chalk.blue;
 var gray = chalk.dim.gray;
 var magenta = chalk.bold.magenta;
 var inverse = chalk.inverse;
@@ -85,6 +85,10 @@ module.exports = generators.Base.extend({
                         {
                             name: 'felayout_t3kit',
                             value: 'felayout_t3kit'
+                        },
+                        {
+                            name: 'felayout_bluemountain',
+                            value: 'felayout_bluemountain'
                         }
                     ],
                 },
@@ -132,7 +136,7 @@ module.exports = generators.Base.extend({
                 type: 'confirm',
                 default: true,
                 when: function(answer) {
-                    return answer.sshLink !== 'skip';
+                    return answer.sshLink !== 'skip' && answer.remoteType !== 'skip';
                 }
             };
             var confirm = {
@@ -144,38 +148,78 @@ module.exports = generators.Base.extend({
             var repo = {
                 type: 'input',
                 name: 'repo',
-                message: 'Need to create new repository on Bitbucket',
+                message: 'Need to create new repository on remote server',
                 default: 'Done',
                 validate: function(answer) {
                     if (answer === 'y' || answer === 'Y' || answer === 'yes' || answer === 'Yes' || answer === 'Done' || answer === 'done') {
                         return true;
                     }
                     return warning('You must create repo before continuing');
+                },
+                when: function(answer) {
+                    return answer.remoteType !== 'skip';
                 }
             };
-            var hook = {
-                type: 'input',
-                name: 'hook',
-                message: 'Need to add ' + yellow('POST Hook') + ' to your project on Bitbucket\n' + blue('http://54.216.37.235/bitbucketpost.php'),
-                default: 'Done',
-                validate: function(answer) {
-                    if (answer === 'y' || answer === 'Y' || answer === 'yes' || answer === 'Yes' || answer === 'Done' || answer === 'done') {
-                        return true;
-                    }
-                    return warning('You must add POST Hook before continuing');
-                }
+            var remote = {
+                type: 'list',
+                name: 'remoteType',
+                message: 'Remote repo server:',
+                choices: [
+                    {
+                        name: 'Bitbucket',
+                        value: 'bitbucket'
+                    },
+                    {
+                        name: 'Github',
+                        value: 'github'
+                    },
+                    {
+                        name: 'Skip',
+                        value: 'skip'
+                    },
+                ],
             };
-            var sshLink = {
+            // var hook = {
+            //     type: 'input',
+            //     name: 'hook',
+            //     message: 'Need to add ' + yellow('POST Hook') + ' to your project on Bitbucket\n' + blue('http://54.216.37.235/bitbucketpost.php'),
+            //     default: 'Done',
+            //     validate: function(answer) {
+            //         if (answer === 'y' || answer === 'Y' || answer === 'yes' || answer === 'Yes' || answer === 'Done' || answer === 'done') {
+            //             return true;
+            //         }
+            //         return warning('You must add POST Hook before continuing');
+            //     }
+            // };
+            var bitbucketsshLink = {
                 type: 'input',
                 name: 'sshLink',
-                message: 'SSH link of your new repository on Bitbucket\n' + inverse('skip') + ' to skip this step',
+                message: 'SSH link of your new remote repository \n' + inverse('skip') + ' to skip this step',
                 validate: function(answer) {
-                    if (answer.length > 31 && answer.slice(0, 27) === 'git@bitbucket.org:pixelant/' && answer.slice(-4) === '.git' || answer === 'skip') {
+                    if (answer.length > 25 && answer.slice(0, 17) === 'git@bitbucket.org' && answer.slice(-4) === '.git' || answer === 'skip') {
                         return true;
                     }
                     return warning('Wrong repository link, try again...');
+                },
+                when: function(answer) {
+                    return answer.remoteType === 'bitbucket';
                 }
             };
+            var githubsshLink = {
+                type: 'input',
+                name: 'sshLink',
+                message: 'SSH link to your new remote repository\n' + inverse('skip') + ' to skip this step',
+                validate: function(answer) {
+                    if (answer.length > 22 && answer.slice(0, 14) === 'git@github.com' && answer.slice(-4) === '.git' || answer === 'skip') {
+                        return true;
+                    }
+                    return warning('Wrong repository link, try again...');
+                },
+                when: function(answer) {
+                    return answer.remoteType === 'github';
+                }
+            };
+
             var installDependencies = {
                 message: 'Install npm/bower dependencies?',
                 name: 'npmBower',
@@ -188,9 +232,26 @@ module.exports = generators.Base.extend({
             //  ============================================
             if (this.projectType === 'felayout_t3kit') {
                 prompts.push(projectName);
+                prompts.push(remote);
                 prompts.push(repo);
-                prompts.push(hook);
-                prompts.push(sshLink);
+                prompts.push(bitbucketsshLink);
+                prompts.push(githubsshLink);
+                prompts.push(git);
+                prompts.push(installDependencies);
+                prompts.push(confirm);
+            }
+            //  ********************************************
+            //  --------------------------------------------
+
+            //  ============================================
+            //  felayout_bluemountain =============================
+            //  ============================================
+            if (this.projectType === 'felayout_bluemountain') {
+                prompts.push(projectName);
+                prompts.push(remote);
+                prompts.push(repo);
+                prompts.push(bitbucketsshLink);
+                prompts.push(githubsshLink);
                 prompts.push(git);
                 prompts.push(installDependencies);
                 prompts.push(confirm);
@@ -233,7 +294,11 @@ module.exports = generators.Base.extend({
         parseGruntfile: function() {
             this.readGruntfile = this.fs.read(this.templatePath() + '/' + this.projectType + '/Gruntfile.js');
             this.gruntfileTree = ast(this.readGruntfile);
-            this.gruntfileTree.var('remoteBranch').value('\'site\'');
+            if (this.remoteType === 'github') {
+                this.gruntfileTree.var('remoteBranch').value('\'gh-pages\'');
+            } else {
+                this.gruntfileTree.var('remoteBranch').value('\'site\'');
+            }
             this.gruntfileTree.var('remoteRepo').value('\'' + this.sshLink + '\'');
         },
 
@@ -246,7 +311,7 @@ module.exports = generators.Base.extend({
         this.fs.copy([
             this.templatePath() + '/' + this.projectType + '/**',
             this.templatePath() + '/' + this.projectType + '/**/.*',
-            '!**/{Gruntfile.js, bower.json,package.json,.git,.npmignore,.gitignore,wct.conf.js,docs,test,README.md}/**'],
+            '!**/{Gruntfile.js, bower.json,package.json,.git,.npmignore,.gitignore,wct.conf.js,docs,test,README.md, LICENSE,CHANGELOG.md,CONTRIBUTING.md,.travis.yml}/**'],
             this.destinationPath()
         );
         this.fs.writeJSON(this.destinationPath('package.json'), this.packageJson);
@@ -306,7 +371,7 @@ module.exports = generators.Base.extend({
                 );
             }
             if (!this.autoGit) {
-                this.log(warning('\nYou need to initialize new git repo\nand push it to the server manually\n') +
+                this.log(warning('\nYou need to initialize new git repo\nand push it to remote server manually\n') +
                     inverse('git init\n' +
                         'git add .\n' +
                         'git commit -m \'[INITIAL COMMIT]\'\n' +
