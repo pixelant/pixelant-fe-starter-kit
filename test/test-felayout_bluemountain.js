@@ -6,12 +6,12 @@ var helpers = require('yeoman-test');
 var assert = require('yeoman-assert');
 
 describe('fe-kit', function() {
-    describe('felayout_t3kit', function() {
+    describe('felayout_bluemountain', function() {
         before(function(done) {
             helpers.run(path.join(__dirname, '../app'))
             .inDir(path.join(__dirname, '.tmp'))
             .withPrompts({
-                projectType: 'felayout_t3kit',
+                projectType: 'felayout_bluemountain',
                 projectName: 'test',
                 remote: 'Skip',
                 installDependencies: false,
