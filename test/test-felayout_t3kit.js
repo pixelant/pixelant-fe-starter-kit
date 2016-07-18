@@ -13,7 +13,11 @@ describe('fe-kit', function() {
             .withPrompts({
                 projectType: 'felayout_t3kit',
                 projectName: 'test',
-                remote: 'Skip',
+                remote: 'skip',
+                repo: 'done',
+                bitbucketsshLink: 'skip',
+                githubsshLink: 'skip',
+                autoGit: false,
                 installDependencies: false,
                 confirmed: true
             })
@@ -56,7 +60,7 @@ describe('fe-kit', function() {
         it('Adds name to package.json', function() {
             assert.fileContent('package.json', '"name": "test"');
         });
-        it('Adds sshlink to Gruntfile.js', function() {
+        it('Adds remoteBranch value to Gruntfile.js', function() {
             assert.fileContent('Gruntfile.js', 'var remoteBranch = \'site\'');
         });
 
