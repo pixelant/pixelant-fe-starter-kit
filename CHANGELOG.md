@@ -1,4 +1,10 @@
 
+#### v1.8.0 `January 24, 2017`
+- **[UPDATE]** felayout_t3kit 1.7.0 ([5c9b671](https://github.com/pixelant/pixelant-fe-starter-kit/commit/5c9b671))
+- **[UPDATE]** felayout_bluemountain 1.0.0 ([359b490](https://github.com/pixelant/pixelant-fe-starter-kit/commit/359b490))
+
+***
+
 #### v1.7.0 `October 19, 2016`
 - **[UPDATE]** felayout_bluemountain 0.6.0 ([8612269](https://github.com/pixelant/pixelant-fe-starter-kit/commit/8612269))
 - **[UPDATE]** felayout_t3kit 1.6.0 ([e644b9e](https://github.com/pixelant/pixelant-fe-starter-kit/commit/e644b9e))
